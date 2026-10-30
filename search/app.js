@@ -13,11 +13,11 @@
 
   /* ---------- theme + plain version ---------- */
   const root = document.documentElement;
-  try { const saved = localStorage.getItem('mrigle-theme'); if (saved) root.dataset.theme = saved; } catch (e) {}
+  try { const saved = localStorage.getItem('mrigoogle-theme'); if (saved) root.dataset.theme = saved; } catch (e) {}
   $('#themeBtn').addEventListener('click', () => {
     const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
     root.dataset.theme = dark ? 'light' : 'dark';
-    try { localStorage.setItem('mrigle-theme', root.dataset.theme); } catch (e) {}
+    try { localStorage.setItem('mrigoogle-theme', root.dataset.theme); } catch (e) {}
   });
 
   const plain = $('#plain');
