@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mrigendra Singh Chauhan · MriGoogle</title>
-<meta name="description" content="Search results for Mrigendra Singh Chauhan: researcher across 3 countries, founder, and Founder's Office / Consulting candidate. Ask the AI overview or check the forecast for your company.">
+<meta name="description" content="Mrigendra Singh Chauhan: research in 3 countries, Springer-published, founder of EIKCAI. Targeting Consulting and Founder's Office / Chief of Staff roles. Ask the AI, or check the forecast for your role.">
 <meta property="og:title" content="Mrigendra Singh Chauhan · Making the complex simple">
 <meta property="og:description" content="Research in 3 countries · Springer-published · Founded EIKCAI (₹1.3L in 40 days) · Masters' Union PGP">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,81 +18,146 @@
 <header class="top">
   <div class="top-row">
     <a class="logo" href="#all" aria-label="MriGoogle home"><span class="mri">Mri</span><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></a>
-    <form class="searchbar" id="searchForm" role="search">
+    <form class="searchbar" id="searchForm" role="search" autocomplete="off">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 9.5 16a6.5 6.5 0 0 0 4.2-1.6l.3.3v.8l5 5 1.5-1.5-5-5Zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"/></svg>
-      <input id="q" aria-label="Ask about Mrigendra" autocomplete="off">
-      <button type="submit" class="ask-btn" aria-label="Ask">
+      <input id="q" aria-label="Search Mrigendra's work" role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list">
+      <button type="button" class="clear-btn" id="clearBtn" aria-label="Clear search" hidden>✕</button>
+      <button type="button" class="ask-btn" id="askBtn" aria-label="Ask in AI Mode" title="Ask in AI Mode">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg>
       </button>
+      <ul class="suggest" id="suggest" role="listbox" hidden></ul>
     </form>
     <div class="top-actions">
       <button class="pill" id="plainBtn" aria-pressed="false">Plain version</button>
       <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5 0-.9-.1-1.4A5.5 5.5 0 0 1 13.4 3.1L12 3Z"/></svg>
       </button>
-      <a class="pill solid" href="mailto:mrigendra.chauhan2028@mastersunion.org">Contact</a>
     </div>
   </div>
-  <nav class="tabs" aria-label="Result types">
+  <nav class="tabs" aria-label="Sections">
+    <a href="#ai" data-tab="ai"><span class="ai-dot" aria-hidden="true"></span>AI Mode</a>
     <a href="#all" data-tab="all">All</a>
-    <a href="#maps" data-tab="maps">Earth</a>
-    <a href="#weather" data-tab="weather">Weather</a>
+    <a href="#fit" data-tab="fit">JD-Fit-Check</a>
     <a href="#images" data-tab="images">Images</a>
-    <a href="#scholar" data-tab="scholar">Scholar</a>
-    <a href="#news" data-tab="news">News</a>
+    <a href="#maps" data-tab="maps">Maps</a>
+    <a href="#skills" data-tab="skills">Skills &amp; tools</a>
+    <a href="#opensource" data-tab="opensource">Open-source</a>
+    <a href="#publications" data-tab="publications">Publications</a>
+    <a href="#connect" data-tab="connect">Connect</a>
   </nav>
 </header>
 
 <main id="main">
+  <!-- AI MODE -->
+  <section class="tab" id="tab-ai" aria-label="AI Mode" hidden>
+    <div class="aimode">
+      <div class="ai-stage" id="aiStage">
+        <div class="ai-hello" id="aiHello">
+          <h1><span class="grad">Hello, I'm Mrigendra's AI.</span></h1>
+          <p>Ask about his research, ventures, skills or fit for your role. I only answer from his résumé and project notes.</p>
+          <div class="ai-cards" id="aiCards"></div>
+        </div>
+        <div class="ai-thread" id="aiThread" aria-live="polite"></div>
+      </div>
+      <form class="ai-input" id="aiForm">
+        <input id="aiInput" placeholder="Ask Mrigendra's AI" aria-label="Ask Mrigendra's AI">
+        <button type="button" class="pill" id="aiNew">New chat</button>
+        <button class="send" type="submit" aria-label="Send">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5v6.6L15 12 3 13.9z"/></svg>
+        </button>
+      </form>
+      <p class="ai-foot">Sample · scripted answers from résumé notes. The live version uses an AI model limited to the same sources.</p>
+    </div>
+  </section>
+
   <!-- ALL -->
-  <section class="tab" id="tab-all" aria-label="All results">
+  <section class="tab" id="tab-all" aria-label="All results" hidden>
     <div class="serp">
       <div class="col-main">
-        <p class="meta-line">About 1 relevant result (0.42 seconds)</p>
-        <p class="dym">Showing results for <b>Mrigendra Singh Chauhan</b> <i>(strategist)</i>. <button class="link" id="dymBtn">Search instead for Mrigendra Singh Chauhan (advocate)</button></p>
-        <p class="dym-note" id="dymNote" hidden>Different Mrigendra. Several people share this name; this one models climates and markets, not court cases.</p>
+        <!-- landing -->
+        <div id="landing">
+          <div class="strip" aria-label="Images of Mrigendra" id="strip"></div>
 
-        <article class="overview" aria-label="AI Overview">
-          <header class="ov-head">
-            <span class="spark" aria-hidden="true"></span><h2>AI Overview</h2>
-            <span class="badge">Sample · answers from résumé notes</span>
-          </header>
-          <div class="thread" id="thread" aria-live="polite"></div>
-          <div class="ov-chips" id="ovChips"></div>
-          <form class="followup" id="followForm">
-            <input id="followInput" placeholder="Ask a follow-up about Mrigendra…" aria-label="Ask a follow-up">
-            <button class="pill solid" type="submit">Ask</button>
-          </form>
-        </article>
+          <article class="overview" aria-label="AI Overview">
+            <header class="ov-head"><span class="spark" aria-hidden="true"></span><h2>AI Overview</h2></header>
+            <ul class="ov-bullets" id="ovBullets"></ul>
+            <div class="ov-chips" id="ovChips"></div>
+            <a class="pill solid" href="#ai">Dive deeper in AI Mode →</a>
+          </article>
 
-        <a class="weather-card" href="#weather" id="miniWeather" aria-label="Open the forecast for Mrigendra"></a>
+          <a class="weather-card" href="#fit" id="miniWeather" aria-label="Open JD-Fit-Check"></a>
 
-        <section class="paa" aria-label="People also ask">
-          <h2>People also ask</h2>
-          <div id="paa"></div>
-        </section>
+          <section aria-label="Career stops">
+            <div class="sec-head"><h2>Career stops</h2><a href="#maps">See on map →</a></div>
+            <div class="carousel" id="stops"></div>
+          </section>
 
-        <section class="results" id="results" aria-label="Web results"></section>
+          <section aria-label="Recognition">
+            <div class="sec-head"><h2>Recognition</h2></div>
+            <div class="carousel awards" id="awards"></div>
+          </section>
+
+          <section class="paa" aria-label="People also ask">
+            <h2>People also ask</h2>
+            <div id="paa"></div>
+          </section>
+
+          <section class="results" id="results" aria-label="Web results"></section>
+        </div>
+
+        <!-- keyword search results -->
+        <div id="searchView" hidden>
+          <p class="meta-line" id="searchMeta"></p>
+          <article class="overview compact" id="searchOverview" hidden></article>
+          <div id="searchResults"></div>
+        </div>
       </div>
 
       <aside class="kp" aria-label="Knowledge panel">
-        <div class="kp-photos">
-          <div class="ph big">Headshot</div>
-          <div class="ph">ANU</div>
-          <div class="ph">EIKCAI</div>
+        <div class="kp-photo ph">Headshot</div>
+        <div class="kp-body">
+          <h2 id="kpName"></h2>
+          <p class="kp-sub" id="kpRole"></p>
+          <p class="kp-tag" id="kpTag"></p>
+          <div class="kp-stats" id="kpStats"></div>
+          <details class="kp-more"><summary>More about Mrigendra</summary><dl id="kpFacts"></dl></details>
+          <div class="kp-links" id="kpLinks"></div>
         </div>
-        <h2 id="kpName"></h2>
-        <p class="kp-sub">Strategy &amp; research · Masters' Union '28</p>
-        <p class="kp-summary" id="kpSummary"></p>
-        <dl id="kpFacts"></dl>
-        <div class="kp-stats" id="kpStats"></div>
-        <div class="kp-links" id="kpLinks"></div>
       </aside>
     </div>
   </section>
 
-  <!-- EARTH -->
-  <section class="tab" id="tab-maps" aria-label="Earth" hidden>
+  <!-- JD-FIT-CHECK -->
+  <section class="tab" id="tab-fit" aria-label="JD-Fit-Check" hidden>
+    <div class="wx-wrap">
+      <div>
+        <div class="wx-switch" id="wxSwitch" role="tablist" aria-label="Forecast"></div>
+        <article class="wx" id="wx" aria-live="polite"></article>
+      </div>
+      <aside class="wx-side">
+        <h2>Run a forecast for your JD</h2>
+        <label for="jd" class="lbl">Paste a job description</label>
+        <textarea id="jd" placeholder="Paste the JD. The forecast updates with an honest match: sunshine where I fit, rain where I don't."></textarea>
+        <div class="row">
+          <button class="pill solid" id="jdBtn">Run forecast</button>
+          <button class="pill" data-ex="strong">Strong-fit JD</button>
+          <button class="pill" data-ex="weak">Weak-fit JD</button>
+        </div>
+        <p class="fineprint">Sample uses keyword matching. The final build reads the JD with an AI model, using only my résumé as evidence.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- IMAGES -->
+  <section class="tab" id="tab-images" aria-label="Images" hidden>
+    <div class="wide">
+      <div class="chips-row" id="imgFilter"></div>
+      <div class="img-grid" id="imgGrid"></div>
+    </div>
+  </section>
+
+  <!-- MAPS -->
+  <section class="tab" id="tab-maps" aria-label="Maps" hidden>
     <div class="earth">
       <div class="globe-wrap" id="globeWrap">
         <svg id="globe" role="img" aria-label="Globe showing the route from Bhopal to Gurugram via Guwahati, Fredericton and Canberra"></svg>
@@ -115,44 +180,67 @@
     </div>
   </section>
 
-  <!-- WEATHER -->
-  <section class="tab" id="tab-weather" aria-label="Weather" hidden>
-    <div class="wx-wrap">
-      <article class="wx" id="wx" aria-live="polite"></article>
-      <aside class="wx-side">
-        <h2>Check another forecast</h2>
-        <label for="companySel" class="lbl">Saved company forecasts</label>
-        <select id="companySel"></select>
-        <label for="jd" class="lbl">Or paste a job description</label>
-        <textarea id="jd" placeholder="Paste the JD. The forecast updates with an honest match: sunshine where I fit, rain where I don't."></textarea>
-        <div class="row">
-          <button class="pill solid" id="jdBtn">Run forecast</button>
-          <button class="pill" data-ex="strong">Strong-fit JD</button>
-          <button class="pill" data-ex="weak">Weak-fit JD</button>
-        </div>
-        <p class="fineprint">Sample uses keyword matching. The final build reads the JD with an AI model, using only my résumé as evidence.</p>
-      </aside>
+  <!-- SKILLS & TOOLS -->
+  <section class="tab" id="tab-skills" aria-label="Skills and tools" hidden>
+    <div class="wide">
+      <div class="skill-groups" id="skillGroups"></div>
+      <div class="sec-head"><h2>MBA projects &amp; decks</h2></div>
+      <div class="card-grid" id="decks"></div>
     </div>
   </section>
 
-  <!-- IMAGES -->
-  <section class="tab" id="tab-images" aria-label="Images" hidden>
-    <div class="wide"><div class="img-grid" id="imgGrid"></div></div>
+  <!-- OPEN-SOURCE -->
+  <section class="tab" id="tab-opensource" aria-label="Open-source" hidden>
+    <div class="wide">
+      <div class="os-head">
+        <div class="chips-row" id="repoFilter"></div>
+        <div class="os-links"><a class="pill" href="https://github.com/MRIG003" target="_blank" rel="noopener">GitHub ↗</a><a class="pill" href="https://www.kaggle.com/mrigendrachauhan" target="_blank" rel="noopener">Kaggle ↗</a></div>
+      </div>
+      <div class="card-grid" id="repos"></div>
+    </div>
   </section>
 
-  <!-- SCHOLAR -->
-  <section class="tab" id="tab-scholar" aria-label="Scholar" hidden>
-    <div class="wide narrow" id="scholar"></div>
+  <!-- PUBLICATIONS -->
+  <section class="tab" id="tab-publications" aria-label="Publications" hidden>
+    <div class="wide narrow">
+      <div id="papers"></div>
+      <div class="sec-head"><h2>Writing</h2><a href="https://medium.com/@mrigendraschauhan" target="_blank" rel="noopener">Medium ↗</a></div>
+      <div id="writing"></div>
+    </div>
   </section>
 
-  <!-- NEWS -->
-  <section class="tab" id="tab-news" aria-label="News" hidden>
-    <div class="wide narrow" id="news"></div>
+  <!-- CONNECT -->
+  <section class="tab" id="tab-connect" aria-label="Connect" hidden>
+    <div class="wide connect">
+      <div class="contact-card">
+        <div class="ph cc-photo">Headshot</div>
+        <h2>Let's talk.</h2>
+        <p>Full-time: Consulting, Founder's Office / Chief of Staff. Part-time: side projects below.</p>
+        <div class="cc-links" id="ccLinks"></div>
+      </div>
+      <div>
+        <div class="sec-head"><h2>Hire me for a side project</h2></div>
+        <div class="offers" id="offers"></div>
+        <form class="brief" id="briefForm">
+          <h3>Send a brief</h3>
+          <div class="brief-row">
+            <label>Your name<input id="bName" required></label>
+            <label>Project type<select id="bType"></select></label>
+          </div>
+          <label>What do you need?<textarea id="bText" required placeholder="Goal, timeline, and what a great outcome looks like."></textarea></label>
+          <button class="pill solid" type="submit">Open in email →</button>
+        </form>
+      </div>
+    </div>
   </section>
 
   <!-- PLAIN -->
   <section id="plain" hidden aria-label="Plain résumé"></section>
 </main>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo">
+  <div class="lb-inner"><button class="icon-btn lb-close" id="lbClose" aria-label="Close">✕</button><div id="lbBody"></div></div>
+</div>
 
 <footer class="foot">
   <span>Bhopal → Guwahati → Fredericton → Canberra → Gurugram</span>
