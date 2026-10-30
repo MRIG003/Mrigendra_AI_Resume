@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mrigendra Singh Chauhan · Field Notes</title>
+<meta name="description" content="Mrigendra Singh Chauhan: researcher across 3 countries, founder, and strategy candidate for Founder's Office and Consulting roles. Making the complex simple.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4efe4; --paper-2:#ebe4d4; --card:#fbf8f1; --ink:#1d2a24; --ink-2:#4a5850;
+  --muted:#7b857e; --line:#d6cdb8; --green:#1f5a43; --green-soft:#dfe9e2;
+  --marker:#d9622b; --marker-soft:#f6dccd; --gold:#c99a2e;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#141a17; --paper-2:#1b2320; --card:#1f2925; --ink:#ece6d8; --ink-2:#b9c0b8;
+  --muted:#8a948d; --line:#33403a; --green:#7cc3a1; --green-soft:#21352c;
+  --marker:#f08a55; --marker-soft:#3a2519; --gold:#e0b752;}}
+:root[data-theme="dark"]{
+  --paper:#141a17; --paper-2:#1b2320; --card:#1f2925; --ink:#ece6d8; --ink-2:#b9c0b8;
+  --muted:#8a948d; --line:#33403a; --green:#7cc3a1; --green-soft:#21352c;
+  --marker:#f08a55; --marker-soft:#3a2519; --gold:#e0b752;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:22px 22px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.1;text-wrap:balance}
+section{padding:88px 0}
+.exhibit{display:inline-flex;gap:10px;align-items:center;margin-bottom:14px}
+.exhibit b{background:var(--ink);color:var(--paper);padding:3px 8px;border-radius:3px;font-weight:500}
+h2{font-size:clamp(30px,4.5vw,46px);margin-bottom:12px}
+.lede{color:var(--ink-2);max-width:640px;font-size:18px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.logo{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;display:flex;gap:8px;align-items:center}
+.logo span{width:30px;height:30px;border:2px solid var(--green);border-radius:50%;display:grid;place-items:center;font-size:12px;color:var(--green);font-family:var(--mono)}
+.links{display:flex;gap:18px;margin-left:auto}
+.links a{text-decoration:none;font-size:14px;color:var(--ink-2)}
+.links a:hover{color:var(--marker)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1.5px solid var(--ink);font:500 14px var(--sans);text-decoration:none;background:transparent;color:var(--ink);cursor:pointer;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.marker{background:var(--marker);border-color:var(--marker);color:#fff}
+.btn:focus-visible,button:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--marker);outline-offset:3px}
+
+/* hero */
+.hero{padding:64px 0 48px}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
+.status{display:inline-flex;gap:8px;align-items:center;background:var(--green-soft);color:var(--green);padding:6px 12px;border-radius:999px;font:500 13px var(--sans);margin-bottom:22px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px color-mix(in srgb,var(--green) 25%,transparent)}
+.hero h1{font-size:clamp(44px,7vw,84px);letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--marker)}
+.hero .name{font:600 20px var(--sans);margin:18px 0 6px}
+.route-line{font-family:var(--mono);font-size:14px;color:var(--ink-2);margin-bottom:26px}
+.route-line b{color:var(--marker);font-weight:500}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.passport{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 18px 40px -24px rgba(0,0,0,.35);transform:rotate(1.5deg)}
+.passport-head{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:10px;margin-bottom:16px}
+.passport-body{display:grid;grid-template-columns:110px 1fr;gap:16px}
+.photo{border:1.5px dashed var(--muted);border-radius:8px;display:grid;place-items:center;text-align:center;color:var(--muted);font:12px var(--mono);min-height:130px;background:var(--paper-2);padding:8px}
+.field{margin-bottom:9px}
+.field .mono{font-size:10px;display:block}
+.field div{font-size:14px;font-weight:500}
+.stamps{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.stamp{border:1.5px solid var(--marker);color:var(--marker);font:500 11px var(--mono);padding:3px 8px;border-radius:4px;transform:rotate(-3deg)}
+.stamp:nth-child(2){transform:rotate(2deg);border-color:var(--green);color:var(--green)}
+.stamp:nth-child(3){transform:rotate(-1deg);border-color:var(--gold);color:var(--gold)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:14px;background:var(--card);margin-top:56px}
+.stat{padding:20px 18px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .num{font:700 32px var(--serif);font-variant-numeric:tabular-nums;color:var(--green)}
+.stat p{font-size:13px;color:var(--ink-2);line-height:1.4}
+
+/* map */
+.map-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:32px;position:relative}
+.map-card svg{width:100%;height:auto;display:block}
+.grat{stroke:var(--line);stroke-width:.6}
+.land{fill:var(--paper-2);stroke:var(--line);stroke-width:1}
+.region{font:500 10px var(--mono);fill:var(--muted);letter-spacing:.1em}
+.path{fill:none;stroke:var(--marker);stroke-width:2;stroke-dasharray:6 6}
+.pin{cursor:pointer}
+.pin circle.dot{fill:var(--marker);stroke:var(--card);stroke-width:3;transition:r .2s}
+.pin circle.halo{fill:var(--marker);opacity:.18}
+.pin:hover circle.dot,.pin:focus circle.dot{r:9}
+.pin text{font:600 12px var(--sans);fill:var(--ink)}
+.pin text.yr{font:400 10px var(--mono);fill:var(--muted)}
+.map-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+
+/* case files */
+.logs{display:grid;gap:28px;margin-top:40px}
+.log{display:grid;grid-template-columns:220px 1fr;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;scroll-margin-top:80px}
+.log-side{background:var(--green);color:#f4efe4;padding:24px;display:flex;flex-direction:column;gap:6px}
+.log-side .mono{color:color-mix(in srgb,#f4efe4 70%,transparent)}
+.log-side h3{font-size:30px;color:#f4efe4}
+.log-side .coord{font:12px var(--mono);opacity:.75}
+.log-side .photo{margin-top:auto;border-color:rgba(244,239,228,.45);background:rgba(0,0,0,.12);color:rgba(244,239,228,.75);min-height:110px}
+.log-main{padding:26px 28px}
+.log-main h4{font:700 22px var(--serif);margin-bottom:16px}
+.scr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scr div{border-top:2px solid var(--ink);padding-top:10px}
+.scr .mono{display:block;margin-bottom:6px;color:var(--ink)}
+.scr p,.scr li{font-size:14.5px;color:var(--ink-2)}
+.scr ul{padding-left:16px}
+.result{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-top:20px;padding:14px 16px;background:var(--marker-soft);border-radius:10px}
+.result .big{font:700 30px var(--serif);color:var(--marker);font-variant-numeric:tabular-nums}
+.result span{font-size:14px;color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font:12px var(--mono);border:1px solid var(--line);padding:2px 8px;border-radius:4px;color:var(--ink-2)}
+
+/* recommendation slide */
+.slide{background:var(--ink);color:var(--paper);border-radius:18px;padding:44px;position:relative;overflow:hidden}
+.slide .mono{color:color-mix(in srgb,var(--paper) 60%,transparent)}
+.slide h2{color:var(--paper);max-width:760px}
+.tree{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;position:relative}
+.tree:before{content:"";position:absolute;top:-17px;left:16.6%;right:16.6%;border-top:1.5px solid color-mix(in srgb,var(--paper) 35%,transparent)}
+.branch{border:1px solid color-mix(in srgb,var(--paper) 22%,transparent);border-radius:12px;padding:20px;position:relative}
+.branch:before{content:"";position:absolute;top:-18px;left:50%;height:17px;border-left:1.5px solid color-mix(in srgb,var(--paper) 35%,transparent)}
+.branch h3{font-size:20px;color:var(--paper);margin-bottom:8px}
+.branch p{font-size:14px;color:color-mix(in srgb,var(--paper) 75%,transparent)}
+.branch .ev{font:12px var(--mono);color:var(--gold);margin-top:10px}
+
+.gaps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.gap{border:1.5px dashed var(--marker);border-radius:12px;padding:18px;background:var(--card)}
+.gap h3{font-size:18px;margin-bottom:6px}
+.gap p{font-size:14px;color:var(--ink-2)}
+
+/* AI tools */
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;min-height:460px}
+.panel-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.panel-head h3{font-size:20px}
+.demo{font:11px var(--mono);background:var(--marker-soft);color:var(--marker);padding:3px 8px;border-radius:4px}
+.chat{flex:1;padding:18px 20px;display:flex;flex-direction:column;gap:12px;overflow:auto;max-height:340px}
+.msg{max-width:88%;padding:10px 14px;border-radius:14px;font-size:14.5px}
+.msg.bot{background:var(--paper-2);border-bottom-left-radius:4px}
+.msg.me{background:var(--green);color:#f4efe4;align-self:flex-end;border-bottom-right-radius:4px}
+.msg .src{display:block;font:11px var(--mono);color:var(--muted);margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 18px}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font:13px var(--sans);color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--marker);color:var(--marker)}
+.fit{padding:18px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:10px;padding:12px;font:14px var(--sans);background:var(--paper);color:var(--ink);resize:vertical}
+.fit-row{display:flex;gap:8px;flex-wrap:wrap}
+.verdict{border-radius:10px;padding:14px;background:var(--paper-2);font-size:14px;display:none}
+.verdict h4{font:700 18px var(--serif);margin-bottom:8px}
+.verdict ul{padding-left:18px;margin:4px 0 8px}
+.meter{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0 12px}
+.meter i{display:block;height:100%;background:var(--green);width:0;transition:width .6s}
+
+/* writing + contact */
+.writing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;text-decoration:none;transition:transform .15s}
+.post:hover{transform:translateY(-3px)}
+.post h3{font-size:18px;margin:6px 0}
+.post p{font-size:13.5px;color:var(--ink-2)}
+footer{border-top:1px solid var(--line);padding:56px 0 40px}
+.contact{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
+.contact h2{font-size:clamp(32px,5vw,54px)}
+.contact-list a{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:14px 0;text-decoration:none}
+.contact-list a:hover{color:var(--marker)}
+.fine{margin-top:40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* plain version */
+body.plain{background-image:none}
+body.plain .passport{transform:none}
+body.plain .map-card,body.plain .stamps,body.plain .photo{display:none}
+body.plain .log{grid-template-columns:1fr}
+body.plain .log-side{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:14px;padding:14px 24px}
+body.plain .log-side h3{font-size:22px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:900px){
+  .links{display:none}
+  .hero-grid,.ai-grid,.contact{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid var(--line)}
+  .log{grid-template-columns:1fr}
+  .scr,.tree,.gaps,.writing{grid-template-columns:1fr}
+  .tree:before,.branch:before{display:none}
+  .slide{padding:28px}
+  .passport{transform:none}
+}
+@media (max-width:520px){.stats{grid-template-columns:1fr}.passport-body{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a href="#main" class="mono" style="position:absolute;left:-999px">Skip to content</a>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><span>MSC</span>Mrigendra</a>
+    <div class="links">
+      <a href="#expedition">Expedition</a>
+      <a href="#logs">Field logs</a>
+      <a href="#recommendation">The case</a>
+      <a href="#ask">Ask me</a>
+      <a href="#fit">Fit check</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="btn" id="plainBtn" aria-pressed="false">Plain version</button>
+    <a class="btn solid" href="#contact">Résumé ↓</a>
+  </div>
+</nav>
+
+<main id="main">
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="status"><i></i>Open to Founder's Office &amp; Consulting roles · 2027</div>
+        <h1>Making the <em>complex</em> simple.</h1>
+        <p class="name">Mrigendra Singh Chauhan</p>
+        <p class="route-line">Engineer <b>→</b> researcher in 3 countries <b>→</b> founder <b>→</b> strategist</p>
+        <p class="lede">I model messy, uncertain systems (forests, climates, reservoirs, markets) and turn them into decisions someone can act on on Monday.</p>
+        <div class="cta" style="margin-top:26px">
+          <a class="btn marker" href="#expedition">Follow the expedition ↓</a>
+          <a class="btn" href="#fit">Check my fit for your role</a>
+        </div>
+      </div>
+
+      <aside class="passport" aria-label="Field passport">
+        <div class="passport-head"><span class="mono">Field passport</span><span class="mono">MSC-026</span></div>
+        <div class="passport-body">
+          <div class="photo">Headshot<br>goes here</div>
+          <div>
+            <div class="field"><span class="mono">Holder</span><div>Mrigendra Singh Chauhan</div></div>
+            <div class="field"><span class="mono">Base</span><div>Gurugram · from Bhopal</div></div>
+            <div class="field"><span class="mono">Now</span><div>PGP TBM, Masters' Union '28</div></div>
+            <div class="field"><span class="mono">Seeking</span><div>Founder's Office · Consulting</div></div>
+          </div>
+        </div>
+        <div class="stamps"><span class="stamp">IIT GUWAHATI</span><span class="stamp">UNB · CANADA</span><span class="stamp">ANU · AUSTRALIA</span></div>
+      </aside>
+    </div>
+
+    <div class="stats" aria-label="Headline numbers">
+      <div class="stat"><div class="num" data-count="1.3" data-prefix="₹" data-suffix="L">₹1.3L</div><p>revenue in 40 days, founding EIKCAI</p></div>
+      <div class="stat"><div class="num" data-count="244">244</div><p>countries ranked by climate risk at ANU</p></div>
+      <div class="stat"><div class="num" data-count="97.5" data-suffix="%">97.5%</div><p>match to NASA's satellite benchmark</p></div>
+      <div class="stat"><div class="num" data-count="3">3</div><p>countries of research: India, Canada, Australia</p></div>
+      <div class="stat"><div class="num">8<span style="font-size:18px">/470</span></div><p>selected to the Consulting Club core team</p></div>
+    </div>
+  </div>
+</header>
+
+<!-- MAP -->
+<section id="expedition" style="padding-top:40px">
+  <div class="wrap">
+    <div class="exhibit mono"><b>Exhibit 1</b>The route so far</div>
+    <h2>Five stops. Three countries. One habit.</h2>
+    <p class="lede">At every stop I picked up a harder system to model. Click a pin to open its field log.</p>
+
+    <div class="map-card">
+      <svg viewBox="240 70 740 330" role="img" aria-label="Map of the route: Bhopal, Guwahati, Fredericton, Canberra, Gurugram">
+        <g class="grat">
+          <line x1="240" y1="111" x2="980" y2="111"/><line x1="240" y1="194" x2="980" y2="194"/><line x1="240" y1="250" x2="980" y2="250"/><line x1="240" y1="306" x2="980" y2="306"/><line x1="240" y1="361" x2="980" y2="361"/>
+          <line x1="333" y1="70" x2="333" y2="400"/><line x1="500" y1="70" x2="500" y2="400"/><line x1="667" y1="70" x2="667" y2="400"/><line x1="833" y1="70" x2="833" y2="400"/>
+        </g>
+        <!-- simplified landmasses -->
+        <path class="land" d="M262 92 L360 84 L392 110 L372 140 L340 150 L318 176 L292 170 L270 140 Z"/>
+        <path class="land" d="M488 96 L560 88 L640 92 L720 100 L800 96 L840 120 L812 150 L778 168 L760 200 L740 212 L722 222 L706 196 L690 180 L650 170 L612 160 L560 148 L520 140 L496 120 Z"/>
+        <path class="land" d="M496 160 L560 156 L590 190 L580 240 L556 290 L530 290 L514 240 L500 200 Z"/>
+        <path class="land" d="M862 310 L910 300 L950 316 L944 352 L906 362 L870 344 Z"/>
+        <text class="region" x="300" y="162">N. AMERICA</text>
+        <text class="region" x="610" y="128">EURASIA</text>
+        <text class="region" x="882" y="334">AUSTRALIA</text>
+
+        <path class="path" d="M715 185 Q735 170 755 177"/>
+        <path class="path" d="M755 177 Q540 30 315 122"/>
+        <path class="path" d="M315 122 Q620 420 914 348"/>
+        <path class="path" d="M914 348 Q800 230 714 171"/>
+
+        <g class="pin" tabindex="0" data-target="log-bhopal"><circle class="halo" cx="715" cy="185" r="14"/><circle class="dot" cx="715" cy="185" r="6"/><text x="672" y="209">01 Bhopal</text><text class="yr" x="672" y="221">2017–21</text></g>
+        <g class="pin" tabindex="0" data-target="log-guwahati"><circle class="halo" cx="755" cy="177" r="14"/><circle class="dot" cx="755" cy="177" r="6"/><text x="768" y="182">02 Guwahati</text><text class="yr" x="768" y="194">2022–24</text></g>
+        <g class="pin" tabindex="0" data-target="log-fredericton"><circle class="halo" cx="315" cy="122" r="14"/><circle class="dot" cx="315" cy="122" r="6"/><text x="328" y="110">03 Fredericton</text><text class="yr" x="328" y="98">Jan–May 2024</text></g>
+        <g class="pin" tabindex="0" data-target="log-canberra"><circle class="halo" cx="914" cy="348" r="14"/><circle class="dot" cx="914" cy="348" r="6"/><text x="870" y="380">04 Canberra</text><text class="yr" x="870" y="392">Jun–Aug 2024</text></g>
+        <g class="pin" tabindex="0" data-target="log-gurugram"><circle class="halo" cx="714" cy="171" r="14"/><circle class="dot" cx="714" cy="171" r="6"/><text x="636" y="160">05 Gurugram</text><text class="yr" x="636" y="148">2026 → now</text></g>
+      </svg>
+      <div class="map-legend mono"><span>— — route</span><span>● field log</span><span>Map simplified, not to scale</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FIELD LOGS -->
+<section id="logs" style="padding-top:20px">
+  <div class="wrap">
+    <div class="exhibit mono"><b>Exhibit 2</b>Field logs · Situation → Action → Result</div>
+    <h2>Each stop, written up like a case.</h2>
+
+    <div class="logs">
+      <article class="log" id="log-bhopal">
+        <div class="log-side">
+          <span class="mono">Field log 01 · 2017–2021</span>
+          <h3>Bhopal</h3>
+          <span class="coord">23.26° N · 77.41° E</span>
+          <div class="photo">Photo: UIT RGPV / street play</div>
+        </div>
+        <div class="log-main">
+          <h4>Foundations: learning how physical systems behave.</h4>
+          <div class="scr">
+            <div><span class="mono">Situation</span><p>Civil engineering degree at UIT, RGPV. Mostly textbooks, a few chances to test ideas in the field.</p></div>
+            <div><span class="mono">Action</span><ul><li>Surveyed villages under Unnat Bharat Abhiyan</li><li>Performed at Manthan'18 street play festival, DU</li><li>Thesis on surface water quality</li></ul></div>
+            <div><span class="mono">Learned</span><p>Data from the ground beats assumptions from the desk.</p></div>
+          </div>
+          <div class="result"><span class="big">96.9</span><span>GATE percentile, top 3.1% of ~1 lakh, which opened the door to IIT Guwahati</span></div>
+        </div>
+      </article>
+
+      <article class="log" id="log-guwahati">
+        <div class="log-side">
+          <span class="mono">Field log 02 · 2022–2024</span>
+          <h3>Guwahati</h3>
+          <span class="coord">26.14° N · 91.74° E</span>
+          <div class="photo">Photo: IITG campus / Cyclothon</div>
+        </div>
+        <div class="log-main">
+          <h4>M.Tech at IIT Guwahati: modelling plus running things.</h4>
+          <div class="scr">
+            <div><span class="mono">Situation</span><p>M.Tech in Earth System Science on an MoE scholarship. Also elected PG Senator.</p></div>
+            <div><span class="mono">Action</span><ul><li>Led PRAYATNA Cyclothon as Overall Coordinator</li><li>Raised ₹65K from ASACS; brought in Monster Energy</li><li>Flood susceptibility mapping (RCRM-2024)</li></ul></div>
+            <div><span class="mono">Learned</span><p>Sponsors, volunteers and deadlines are a system too.</p></div>
+          </div>
+          <div class="result"><span class="big">180+</span><span>cyclists mobilised, with cross-functional execution end to end</span></div>
+          <div class="tags"><span class="tag">85.6%</span><span class="tag">PG Senator</span><span class="tag">Stakeholder mgmt</span></div>
+        </div>
+      </article>
+
+      <article class="log" id="log-fredericton">
+        <div class="log-side">
+          <span class="mono">Field log 03 · Jan–May 2024</span>
+          <h3>Fredericton</h3>
+          <span class="coord">45.96° N · 66.64° W</span>
+          <div class="photo">Photo: UNB / Acadian forest</div>
+        </div>
+        <div class="log-main">
+          <h4>Mitacs Globalink, UNB: forecasting a forest to 2075.</h4>
+          <div class="scr">
+            <div><span class="mono">Situation</span><p>A Harvard ecosystem model with no documentation, and a forest nobody had forecast at this resolution.</p></div>
+            <div><span class="mono">Action</span><ul><li>Reverse-engineered the model</li><li>Calibrated inputs to local conditions with LiDAR data</li><li>Forecast 3 carbon pools to 2075</li></ul></div>
+            <div><span class="mono">Learned</span><p>Calibrate before you conclude.</p></div>
+          </div>
+          <div class="result"><span class="big">97.5%</span><span>correlation with NASA MODIS · published in <i>Earth Systems and Environment</i> (Springer, 2025)</span></div>
+        </div>
+      </article>
+
+      <article class="log" id="log-canberra">
+        <div class="log-side">
+          <span class="mono">Field log 04 · Jun–Aug 2024</span>
+          <h3>Canberra</h3>
+          <span class="coord">35.28° S · 149.13° E</span>
+          <div class="photo">Photo: ANU / Canberra</div>
+        </div>
+        <div class="log-main">
+          <h4>ANU Future Research Talent: sizing climate risk for 244 markets.</h4>
+          <div class="scr">
+            <div><span class="mono">Situation</span><p>Policymakers needed to know where mitigation money matters most.</p></div>
+            <div><span class="mono">Action</span><ul><li>Scenario analysis: 1.5°C vs 2.7°C pathways</li><li>Ranked 244 countries into a decision-ready view</li><li>27-year economic complexity benchmark, 5,200 products</li></ul></div>
+            <div><span class="mono">Learned</span><p>A ranking is worth more than a report.</p></div>
+          </div>
+          <div class="result"><span class="big">5×</span><span>swing in population at risk (2B → 0.4B) between scenarios · 1 of 70 selected in India</span></div>
+        </div>
+      </article>
+
+      <article class="log" id="log-gurugram">
+        <div class="log-side">
+          <span class="mono">Field log 05 · 2026 → now</span>
+          <h3>Gurugram</h3>
+          <span class="coord">28.46° N · 77.03° E</span>
+          <div class="photo">Photo: Masters' Union / EIKCAI stall</div>
+        </div>
+        <div class="log-main">
+          <h4>Masters' Union: from modelling markets to building in them.</h4>
+          <div class="scr">
+            <div><span class="mono">Situation</span><p>PGP in Technology &amp; Business Management, Young Leaders Cohort, on scholarship.</p></div>
+            <div><span class="mono">Action</span><ul><li>Founded EIKCAI, an astro &amp; demi-fine jewellery brand, in 23 days</li><li>Shipped ENGAGE, a no-sign-up meeting companion</li><li>Consulting Club core team; won Wingwoman.sim</li></ul></div>
+            <div><span class="mono">Learned</span><p>Real customers are the fastest feedback loop.</p></div>
+          </div>
+          <div class="result"><span class="big">₹1.3L</span><span>revenue in 40 days · top 15 of 40 teams</span></div>
+          <div class="tags"><span class="tag">MUCC 8/470+</span><span class="tag">1st · Wingwoman.sim</span><span class="tag">Bloomberg ESG</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATION SLIDE -->
+<section id="recommendation">
+  <div class="wrap">
+    <div class="slide">
+      <div class="exhibit mono"><b style="background:var(--marker)">Exhibit 3</b>Recommendation</div>
+      <h2>Hire for a Founder's Office or consulting seat. Here's the issue tree.</h2>
+      <div class="tree">
+        <div class="branch"><h3>Structures ambiguity</h3><p>Took an undocumented model and a 244-country question and turned both into decision-ready outputs.</p><div class="ev">Evidence → UNB, ANU</div></div>
+        <div class="branch"><h3>Ships, not just plans</h3><p>Concept to market in 23 days; a live product; a published paper.</p><div class="ev">Evidence → EIKCAI, ENGAGE</div></div>
+        <div class="branch"><h3>Moves people</h3><p>180+ cyclists, sponsors, a senate seat, and a selective consulting team.</p><div class="ev">Evidence → IITG, MUCC</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px">
+      <div class="exhibit mono"><b>Exhibit 4</b>Honest gaps</div>
+      <h2 style="font-size:32px">What I don't have yet.</h2>
+      <div class="gaps">
+        <div class="gap"><h3>No full-time corporate role</h3><p>My experience is research and ventures. I close the gap by shipping real things with real customers.</p></div>
+        <div class="gap"><h3>Limited P&amp;L ownership</h3><p>₹1.3L is small. The playbook (launch, price, iterate) is the part that scales.</p></div>
+        <div class="gap"><h3>Not a full-stack engineer</h3><p>I build with AI tools and Python; I'd partner with engineers for production systems.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI TOOLS -->
+<section id="ask" style="padding-top:20px">
+  <div class="wrap">
+    <div class="exhibit mono"><b>Exhibit 5</b>Interrogate the candidate</div>
+    <h2>Ask me anything. Or test my fit.</h2>
+    <p class="lede">Answers only come from my résumé and project notes. If something isn't there, the assistant says so.</p>
+
+    <div class="ai-grid">
+      <div class="panel">
+        <div class="panel-head"><h3>Ask Mrigendra</h3><span class="demo">Sample · scripted answers</span></div>
+        <div class="chat" id="chat" aria-live="polite">
+          <div class="msg bot">Hi, I'm Mrigendra's résumé assistant. Pick a question below.</div>
+        </div>
+        <div class="chips" id="chips"></div>
+      </div>
+
+      <div class="panel" id="fit">
+        <div class="panel-head"><h3>Honest fit check</h3><span class="demo">Sample · keyword match</span></div>
+        <div class="fit">
+          <label class="mono" for="jd">Paste a job description</label>
+          <textarea id="jd" placeholder="e.g. Founder's Office Associate: market sizing, cross-functional projects, investor decks, SQL…"></textarea>
+          <div class="fit-row">
+            <button class="btn solid" id="fitBtn">Analyse fit</button>
+            <button class="btn" data-ex="strong">Try a strong fit</button>
+            <button class="btn" data-ex="weak">Try a weak fit</button>
+          </div>
+          <div class="verdict" id="verdict" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="exhibit mono"><b>Exhibit 6</b>Notes from the field</div>
+    <h2 style="font-size:32px">I write to think.</h2>
+    <div class="writing">
+      <a class="post" href="https://medium.com/@mrigendraschauhan/what-would-it-cost-to-own-the-earth-1ba0d6d29825" target="_blank" rel="noopener"><span class="mono">Medium · Jul 2025</span><h3>What would it cost to own the Earth?</h3><p>A back-of-envelope sizing that ends at $5 quadrillion a year, and a point about stewardship.</p></a>
+      <a class="post" href="https://medium.com/@mrigendraschauhan/investing-in-a-sustainable-future-the-intersection-of-climate-change-esg-and-global-cooperation-323ea018182f" target="_blank" rel="noopener"><span class="mono">Medium · Dec 2024</span><h3>Climate, ESG and global cooperation</h3><p>Written after Canberra: why private capital decides the climate outcome.</p></a>
+      <a class="post" href="https://doi.org/10.1007/s41748-025-00817-6" target="_blank" rel="noopener"><span class="mono">Paper · Oct 2025</span><h3>Carbon sequestration of Acadian forests</h3><p>Earth Systems and Environment (Springer). LiDAR + ecosystem modelling to 2075.</p></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="exhibit mono"><b>Next stop</b>Your team?</div>
+        <h2>Give me your messiest problem. I'll bring the issue tree.</h2>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:mrigendra.chauhan2028@mastersunion.org"><span>Email</span><span class="mono">mrigendra.chauhan2028@…</span></a>
+        <a href="https://www.linkedin.com/in/mrigendra-singh" target="_blank" rel="noopener"><span>LinkedIn</span><span class="mono">in/mrigendra-singh ↗</span></a>
+        <a href="https://github.com/MRIG003" target="_blank" rel="noopener"><span>GitHub</span><span class="mono">MRIG003 ↗</span></a>
+        <a href="#"><span>Résumé · one page</span><span class="mono">PDF ↓</span></a>
+      </div>
+    </div>
+    <div class="fine mono"><span>© 2026 Mrigendra Singh Chauhan · Gurugram &amp; Bhopal</span><span>Sample build · photos and AI to follow</span></div>
+  </div>
+</footer>
+
+<script>
+// Plain version toggle
+const plainBtn = document.getElementById('plainBtn');
+plainBtn.addEventListener('click', () => {
+  const on = document.body.classList.toggle('plain');
+  plainBtn.setAttribute('aria-pressed', on);
+  plainBtn.textContent = on ? 'Story version' : 'Plain version';
+});
+
+// Map pins scroll to field logs
+document.querySelectorAll('.pin').forEach(pin => {
+  const go = () => document.getElementById(pin.dataset.target).scrollIntoView({behavior: 'smooth'});
+  pin.addEventListener('click', go);
+  pin.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+});
+
+// Count-up stats, skipped for reduced motion
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduce) {
+  const io = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target, end = parseFloat(el.dataset.count);
+    const decimals = (el.dataset.count.split('.')[1] || '').length;
+    const pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    const start = performance.now();
+    const tick = now => {
+      const t = Math.min((now - start) / 1100, 1), eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = pre + (end * eased).toFixed(decimals) + suf;
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    io.unobserve(el);
+  }), {threshold: .6});
+  document.querySelectorAll('[data-count]').forEach(el => io.observe(el));
+}
+
+// Scripted chat (the real build grounds answers in résumé files via an LLM)
+const answers = {
+  "What's your strongest project?": ["ANU: I ranked 244 countries by climate risk under 1.5°C and 2.7°C scenarios and found a 5× swing in population at risk (2B → 0.4B). Policymakers got a ranked list, not a report.", "Internships → ANU"],
+  "Why Founder's Office?": ["My best work has been taking an undocumented, ambiguous problem and making it decision-ready, then shipping. EIKCAI went from concept to market in 23 days and made ₹1.3L in 40.", "Projects → EIKCAI"],
+  "Any full-time experience?": ["Not yet. My experience is research in India, Canada and Australia, plus two ventures at Masters' Union. I've listed that openly under Honest gaps.", "Exhibit 4 → Honest gaps"],
+  "What tools do you use?": ["Excel, Power BI, SQL, Python (Pandas, NumPy), R and Google Earth Engine. For building: Claude, Lovable, Vercel, Render, Supabase, n8n and Make.", "Skills → Technical"],
+  "What's your favourite colour?": ["That's not in my notes, so I won't guess. Ask me about his projects, results or availability instead.", "Out of scope"]
+};
+const chat = document.getElementById('chat'), chips = document.getElementById('chips');
+const add = (text, who, src) => {
+  const m = document.createElement('div');
+  m.className = 'msg ' + who; m.textContent = text;
+  if (src) { const s = document.createElement('span'); s.className = 'src'; s.textContent = 'Source: ' + src; m.appendChild(s); }
+  chat.appendChild(m); chat.scrollTop = chat.scrollHeight;
+};
+Object.keys(answers).forEach(q => {
+  const b = document.createElement('button');
+  b.className = 'chip'; b.textContent = q;
+  b.addEventListener('click', () => { add(q, 'me'); setTimeout(() => add(answers[q][0], 'bot', answers[q][1]), 350); });
+  chips.appendChild(b);
+});
+
+// Keyword fit check (the real build sends the JD to an LLM with the résumé as context)
+const strengths = {
+  'market sizing': 'Market sizing: 244-market risk ranking at ANU',
+  'scenario': 'Scenario analysis: 1.5°C vs 2.7°C pathways',
+  'research': 'Research in 3 countries, Springer publication',
+  'excel': 'Excel and Power BI', 'sql': 'SQL', 'python': 'Python (Pandas, NumPy)',
+  'stakeholder': 'Stakeholder management: sponsors, ASACS, 180+ cyclists',
+  'launch': 'Launched EIKCAI from concept to market in 23 days',
+  'go-to-market': 'GTM: EIKCAI launch, ₹1.3L in 40 days', 'gtm': 'GTM: EIKCAI launch, ₹1.3L in 40 days',
+  'strategy': 'Strategy: Consulting Club core team, case competitions',
+  'esg': 'ESG: Bloomberg and IIM-B certifications', 'sustainab': 'Sustainability research background',
+  'cross-functional': 'Cross-functional execution: PRAYATNA Cyclothon',
+  'problem solving': 'Structured problem solving (MECE, issue trees)', 'ai': 'Built AI tools: ENGAGE and automations'
+};
+const gaps = {
+  'years of experience': 'Years of full-time experience: none yet', '3+ years': 'Asks for 3+ years: I have research and ventures, not FTE years',
+  'java': 'Java: not in my stack', 'react': 'Production React engineering: limited',
+  'sales quota': 'Quota-carrying sales: no direct experience', 'cfa': 'CFA: not held',
+  'investment banking': 'Investment banking: no direct experience', 'people management': 'Managing direct reports: not yet'
+};
+const examples = {
+  strong: "Founder's Office Associate. Drive market sizing and scenario analysis for new bets, run cross-functional launches, build Excel/SQL models, manage stakeholders, and support go-to-market strategy. Comfort with AI tools a plus.",
+  weak: "Senior Backend Engineer. 3+ years of experience building Java microservices, React front ends, and people management of a team of 4. Investment banking exposure preferred."
+};
+const jd = document.getElementById('jd'), verdict = document.getElementById('verdict');
+document.querySelectorAll('[data-ex]').forEach(b => b.addEventListener('click', () => { jd.value = examples[b.dataset.ex]; analyse(); }));
+document.getElementById('fitBtn').addEventListener('click', analyse);
+function analyse() {
+  const text = jd.value.toLowerCase();
+  if (!text.trim()) { verdict.style.display = 'block'; verdict.innerHTML = '<p>Paste a job description first.</p>'; return; }
+  const hit = [...new Set(Object.keys(strengths).filter(k => text.includes(k)).map(k => strengths[k]))];
+  const miss = [...new Set(Object.keys(gaps).filter(k => text.includes(k)).map(k => gaps[k]))];
+  const score = Math.round(100 * hit.length / Math.max(hit.length + miss.length * 1.5, 1));
+  const label = score >= 70 ? 'Strong fit' : score >= 40 ? 'Partial fit' : 'Probably not the right person';
+  const list = arr => arr.length ? '<ul>' + arr.map(x => '<li>' + x + '</li>').join('') + '</ul>' : '<p class="mono">None detected</p>';
+  verdict.style.display = 'block';
+  verdict.innerHTML = '<h4>' + label + '</h4><div class="meter"><i style="width:0"></i></div>' +
+    '<span class="mono">Where I match</span>' + list(hit) + '<span class="mono">Where I don\'t</span>' + list(miss) +
+    (score < 40 ? '<p>Honestly, I\'d point you to someone else for this one.</p>' : '');
+  requestAnimationFrame(() => verdict.querySelector('.meter i').style.width = score + '%');
+}
+</script>
+</body>
+</html>
