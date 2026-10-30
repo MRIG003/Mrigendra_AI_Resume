@@ -44,8 +44,11 @@
   let pendingQuestion = null;
   function go(tab) { if (location.hash === '#' + tab) showTab(); else location.hash = tab; }
   function showTab() {
-    const name = TAB_NAMES[location.hash.slice(1)] ? location.hash.slice(1) : 'all';
-    Object.keys(TAB_NAMES).forEach(t => { $('#tab-' + t).hidden = t !== name; });
+    const h = location.hash.slice(1);
+    const name = TAB_NAMES[h] ? h : 'home';
+    ['home', ...Object.keys(TAB_NAMES)].forEach(t => { $('#tab-' + t).hidden = t !== name; });
+    document.body.classList.toggle('home-on', name === 'home');
+    if (name === 'home') Home.enter();
     $$('.tabs a').forEach(a => { if (a.dataset.tab === name) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
     document.body.classList.toggle('ai-on', name === 'ai');
     if (name === 'maps') Earth.init();
@@ -211,7 +214,50 @@
     $$('#searchResults [data-hit]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openItem(hits[+a.dataset.hit]); }));
     const emptyAsk = $('#emptyAsk'); if (emptyAsk) emptyAsk.addEventListener('click', () => askInAiMode(v));
   }
-  $('.logo').addEventListener('click', () => { q.value = PROFILE.query; runSearch(q.value); });
+  $('.logo').addEventListener('click', () => { q.value = PROFILE.query; $('#landing').hidden = false; $('#searchView').hidden = true; });
+
+  /* ---------- HOME (start page) ---------- */
+  const SHORTCUTS = [
+    ['ai', '<i></i>', 'ai'], ['all', '🔍'], ['fit', '⛅'], ['images', '🖼️'], ['maps', '🌍'],
+    ['skills', '🧰'], ['opensource', '💻'], ['publications', '📄'], ['connect', '🤝']
+  ];
+  const shortcutHtml = SHORTCUTS.map(([t, ic, cls]) => `<a href="#${t}"><span class="sc-ic ${cls || ''}" aria-hidden="true">${ic}</span>${esc(TAB_NAMES[t])}</a>`).join('');
+  $('#shortcuts').innerHTML = shortcutHtml;
+  $('#appsMenu').innerHTML = shortcutHtml;
+  const appsBtn = $('#appsBtn'), appsMenu = $('#appsMenu');
+  appsBtn.addEventListener('click', e => { e.stopPropagation(); appsMenu.hidden = !appsMenu.hidden; appsBtn.setAttribute('aria-expanded', !appsMenu.hidden); });
+  document.addEventListener('click', e => { if (!appsMenu.hidden && !e.target.closest('.apps-wrap')) { appsMenu.hidden = true; appsBtn.setAttribute('aria-expanded', 'false'); } });
+  $('#homePlain').addEventListener('click', e => { e.preventDefault(); go('all'); $('#plainBtn').click(); });
+  $('#customiseBtn').addEventListener('click', () => $('#themeBtn').click());
+
+  const homeQ = $('#homeQ');
+  const Home = {
+    typed: false, timer: null,
+    enter() {
+      if (this.typed) return;
+      this.typed = true;
+      const text = PROFILE.query;
+      if (reduceMotion) { homeQ.value = text; this.ready(); return; }
+      let i = 0;
+      homeQ.value = '';
+      const tick = () => {
+        homeQ.value = text.slice(0, ++i);
+        if (i < text.length) this.timer = setTimeout(tick, 70); else this.ready();
+      };
+      this.timer = setTimeout(tick, 500);
+    },
+    ready() { $('#enterHint').classList.add('pulse'); homeQ.focus({ preventScroll: true }); homeQ.setSelectionRange(homeQ.value.length, homeQ.value.length); },
+    stopTyping() { clearTimeout(this.timer); this.ready(); }
+  };
+  homeQ.addEventListener('keydown', () => Home.stopTyping(), { once: true });
+  homeQ.addEventListener('mousedown', () => Home.stopTyping(), { once: true });
+  $('#homeForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = homeQ.value.trim() || PROFILE.query;
+    q.value = v;
+    runSearch(v);
+  });
+  $('#homeAi').addEventListener('click', () => { const v = homeQ.value.trim(); askInAiMode(isName(v) ? KB[0].q : v); });
 
   /* ---------- ALL: landing ---------- */
   const imgHtml = (img, cls = '') => img.src ? `<img src="${esc(img.src)}" alt="${esc(img.caption)}" loading="lazy">` : `<div class="ph ${cls}">${esc(img.caption)}</div>`;
