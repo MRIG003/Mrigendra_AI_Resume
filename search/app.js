@@ -121,7 +121,7 @@
     'RÉSUMÉ (source of truth):', window.RESUME_TEXT || '',
     '', 'EXTRA FACTS:',
     '- The Acadian research forest is 2,400 ha; the published paper simulates a 122.5 ha study area within it.',
-    `- ENGAGE is a live no-sign-up meeting companion on the Google Workspace Marketplace: ${PROFILE.links.engage}`,
+    `- ENGAGE is a live no-sign-up meeting companion. Marketplace listing tagline: "Live polls, questions, reactions and quick games in the Google Meet side panel." It is also built to work beside Zoom, Teams and Zoho. ${PROFILE.links.engage}`,
     `- Contact: phone ${PROFILE.links.phone}; email ${PROFILE.links.email}; LinkedIn ${PROFILE.links.linkedin}; GitHub ${PROFILE.links.github}; Medium ${PROFILE.links.medium}.`,
     `- Open to side projects: ${OFFERS.map(o => o.title).join('; ')}.`,
     '- Targets: Consulting, and Founder\'s Office / Chief of Staff roles. He has no full-time corporate role yet.',
@@ -410,7 +410,7 @@ Rules:
   /* ---------- SKILLS & TOOLS ---------- */
   $('#skillGroups').innerHTML = SKILLS.map(g => `<div class="sg"><h3><span>${g.icon}</span>${esc(g.group)}</h3><ul>${g.items.map(([n, ev]) => `<li><span>${esc(n)}</span>${ev ? `<small>${esc(ev)}</small>` : ''}</li>`).join('')}</ul></div>`).join('');
   $('#certs').innerHTML = CERTS.map(([n, i, d]) => `<div class="cert"><b>${esc(n)}</b><span>${esc(i)}</span><small>${esc(d)}</small></div>`).join('');
-  $('#decks').innerHTML = DECKS.map(d => `<article class="card"><div class="ph thumb">Deck preview</div><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p><div class="tags">${d.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div><div class="foot-row">${d.href ? `<a href="${d.href}" ${ext(d.href)}>Open ↗</a>` : '<span>Deck coming soon</span>'}</div></article>`).join('');
+  $('#decks').innerHTML = DECKS.map(d => `<article class="card"><div class="ph thumb">${d.img ? `<img src="${d.img}" alt="${esc(d.title)} preview" loading="lazy">` : 'Deck preview'}</div><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p><div class="tags">${d.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div><div class="foot-row">${d.href ? `<a href="${d.href}" ${ext(d.href)}>Open ↗</a>` : '<span>Deck coming soon</span>'}</div></article>`).join('');
 
   /* ---------- OPEN-SOURCE ---------- */
   const LANG_COLORS = { JavaScript: '#f1e05a', Python: '#3572A5', Jupyter: '#DA5B0B', TeX: '#3D6117', Kaggle: '#20BEFF', Prompting: '#8a63d2' };
@@ -425,7 +425,7 @@ Rules:
   });
   function renderRepos() {
     $('#repos').innerHTML = REPOS.filter(r => kind === 'All' || r.kind === kind).map(r => `
-      <article class="card"><h3><a href="${r.href}" ${ext(r.href)}>${esc(r.name)}</a></h3><p>${esc(r.text)}</p>
+      <article class="card">${r.img ? `<div class="ph thumb"><img src="${r.img}" alt="${esc(r.name)} preview" loading="lazy"></div>` : ''}<h3><a href="${r.href}" ${ext(r.href)}>${esc(r.name)}</a></h3><p>${esc(r.text)}</p>
       <div class="foot-row"><span class="lang"><i style="background:${LANG_COLORS[r.lang] || 'var(--muted)'}"></i>${esc(r.lang)}</span>${r.live ? `<a class="pill solid" href="${r.live}" ${ext(r.live)}>Live ↗</a>` : `<span>${esc(r.kind)}</span>`}</div></article>`).join('');
   }
   renderRepos();

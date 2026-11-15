@@ -45,6 +45,7 @@ window.IMAGES = [
   { src: null, caption: "UNB, Fredericton", story: "" },
   { src: null, caption: "Acadian forest fieldwork", story: "" },
   { src: null, caption: "EIKCAI stall and products", story: "" },
+  { src: "img/engage-listing.webp", thumb: "img/engage-listing.webp", pos: "0% 50%", caption: "ENGAGE on the Google Workspace Marketplace", story: "Live polls, questions, reactions and quick games in the Google Meet side panel. Listing updated 29 October 2026." },
   { src: null, caption: "ENGAGE in a live meeting", story: "" },
   { src: null, caption: "Consulting Club", story: "" }
 ];
@@ -59,8 +60,8 @@ window.RESULTS = [
     title: "Carbon Sequestration Potential of Acadian Forests", snippet: "LiDAR-initialised ecosystem model, simulated 2021–2075.",
     chips: ["Earth Systems and Environment", "2025", "2nd author"] },
   { site: "Google Workspace Marketplace", url: "workspace.google.com › marketplace › app › engage", href: "https://workspace.google.com/marketplace/app/engage/124557177750",
-    title: "ENGAGE · Meeting engagement companion", snippet: "No-sign-up layer beside Meet, Zoom, Teams and Zoho: live polls, Q&A and a host mood view.",
-    chips: ["Live product", "4 platforms", "No sign-up"] }
+    title: "ENGAGE · Meeting engagement companion", snippet: "Live polls, questions, reactions and quick games in the Google Meet side panel.",
+    chips: ["Live product", "Listing updated 29 Oct 2026", "No sign-up"] }
 ];
 
 // Chatbot knowledge base (AI Mode + AI Overview). The real build replaces this with an LLM grounded in the résumé.
@@ -84,7 +85,7 @@ window.KB = [
     a: "He was Overall Coordinator of the PRAYATNA Cyclothon at IIT Guwahati: 180+ cyclists, ₹65,000 raised from the Assam State AIDS Control Society, and Monster Energy onboarded as a partner.",
     s: ["Résumé › Leadership", "Images"] },
   { q: "What is ENGAGE?", icon: "🤖", k: ["engage", "app", "meeting", "built", "build", "product", "ai", "ml", "open source", "github"],
-    a: "A no-sign-up meeting companion that works beside Meet, Zoom, Teams and Zoho. It runs live polls and Q&A, and a host mood view flags quiet attendees and suggests fixes for dips.",
+    a: "A no-sign-up meeting companion, listed on the Google Workspace Marketplace for the Google Meet side panel and built to work beside Zoom, Teams and Zoho too. It runs live polls, questions, reactions and quick games, and a host mood view flags quiet attendees and suggests fixes for dips.",
     s: ["Open-source", "Résumé › Projects"] },
   { q: "Can I hire him for a side project?", icon: "🤝", k: ["hire", "side", "freelance", "contract", "help"],
     a: "Yes. He takes on short side projects: market sizing and research sprints, AI automations and tools, climate and ESG analysis, and data prototypes. The Connect tab has a brief form.",
@@ -147,7 +148,7 @@ window.CERTS = [
 // MBA projects and decks. Add the PPT/PDF link in href when ready.
 window.DECKS = [
   { title: "EIKCAI: launch & go-to-market", tags: ["GTM", "Pricing", "Execution"], text: "Concept to market in 23 days; ₹1.3L in 40 days; top 15 of 40 teams.", href: null },
-  { title: "ENGAGE: meeting engagement app", tags: ["Product", "AI in Business"], text: "A no-sign-up companion for Meet, Zoom, Teams and Zoho, live on the Google Workspace Marketplace.", href: "https://workspace.google.com/marketplace/app/engage/124557177750" },
+  { title: "ENGAGE: meeting engagement app", tags: ["Product", "AI in Business"], img: "img/engage-listing.webp", text: "Live polls, questions, reactions and quick games in the Google Meet side panel. A no-sign-up companion that also works beside Zoom, Teams and Zoho.", href: "https://workspace.google.com/marketplace/app/engage/124557177750" },
   { title: "Climate risk across 244 markets", tags: ["Market sizing", "Scenario analysis"], text: "Decision-ready ranking for mitigation investment, from the ANU internship.", href: null },
   { title: "Reservoir release & storage optimisation", tags: ["Cost-benefit", "Optimisation"], text: "5 crops, 9,848 hectares, 10 periods; 44 MCM sustainable-supply threshold.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
   { title: "Perfora landing page redesign", tags: ["Vibe-coding", "Vercel"], text: "Redesigned and shipped a landing page from idea to deployment.", href: null },
@@ -156,7 +157,7 @@ window.DECKS = [
 
 // Open-source tab. `live` adds a "Live" button.
 window.REPOS = [
-  { name: "Hum (ENGAGE)", lang: "JavaScript", kind: "Product", text: "Meeting engagement layer beside Meet, Zoom, Teams and Zoho: polls, Q&A, host mood view, no sign-up.", href: "https://github.com/MRIG003/Hum", live: "https://workspace.google.com/marketplace/app/engage/124557177750" },
+  { name: "Hum (ENGAGE)", lang: "JavaScript", kind: "Product", img: "img/engage-listing.webp", text: "Meeting engagement layer beside Meet, Zoom, Teams and Zoho: polls, Q&A, host mood view, no sign-up.", href: "https://github.com/MRIG003/Hum", live: "https://workspace.google.com/marketplace/app/engage/124557177750" },
   { name: "MastersUnion_ResumeFormat", lang: "TeX", kind: "Tool", text: "One-page LaTeX résumé template for Masters' Union students, tuned for consulting roles.", href: "https://github.com/MRIG003/MastersUnion_ResumeFormat" },
   { name: "HELPMEHUMANIZE", lang: "Prompting", kind: "Tool", text: "Prose-craft rewriter that improves clarity and voice while preserving facts.", href: "https://github.com/MRIG003/HELPMEHUMANIZE" },
   { name: "Mrigendra_AI_Resume", lang: "JavaScript", kind: "Product", text: "This site: an interactive AI résumé in a search-engine theme.", href: "https://github.com/MRIG003/Mrigendra_AI_Resume" },
