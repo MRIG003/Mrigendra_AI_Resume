@@ -126,6 +126,7 @@
     `- Open to side projects: ${OFFERS.map(o => o.title).join('; ')}.`,
     '- Targets: Consulting, and Founder\'s Office / Chief of Staff roles. He has no full-time corporate role yet.',
     '- Reservoir project: generalised pattern search in MATLAB minimising a 48-variable release-and-storage objective with only bound constraints (5 crops, 9,848 ha, 10 periods). Lowest cost found for each storage level tested (MCM -> minimum cost): 70.04 -> 5.1529; 65.04 -> 2.7528; 48.04 -> 0.6132; 40.04 -> 10.0191. The résumé also cites a 44 MCM sustainable-supply threshold.',
+    `- Perfora redesign: a concept landing-page redesign pitch for the oral-care brand Perfora, deployed on Vercel (${'https://perfora-redesign-pitch.vercel.app/'}). It is not Perfora's live store and checkout is a demo. Sections: proof-first hero, ingredient science, pick-your-concern router, best sellers, before/after slider, 30-day guarantee, FAQ.`,
     `- Open-source work: ${REPOS.map(r => r.name).join(', ')}.`,
     `- Writing: ${WRITING.map(w => w.title).join('; ')}.`
   ].join('\n');
@@ -412,7 +413,7 @@ Rules:
   /* ---------- SKILLS & TOOLS ---------- */
   $('#skillGroups').innerHTML = SKILLS.map(g => `<div class="sg"><h3><span>${g.icon}</span>${esc(g.group)}</h3><ul>${g.items.map(([n, ev]) => `<li><span>${esc(n)}</span>${ev ? `<small>${esc(ev)}</small>` : ''}</li>`).join('')}</ul></div>`).join('');
   $('#certs').innerHTML = CERTS.map(([n, i, d]) => `<div class="cert"><b>${esc(n)}</b><span>${esc(i)}</span><small>${esc(d)}</small></div>`).join('');
-  const zoomAttr = src => { const i = IMAGES.findIndex(m => m.src === src || m.thumb === src); return i >= 0 ? ` data-img="${i}" tabindex="0" role="button" aria-label="Enlarge preview"` : ''; };
+  const zoomAttr = src => { const i = IMAGES.findIndex(m => m.src === src || m.thumb === src || (m.also && m.also.includes(src))); return i >= 0 ? ` data-img="${i}" tabindex="0" role="button" aria-label="Enlarge preview"` : ''; };
   $('#decks').innerHTML = DECKS.map(d => `<article class="card"><div class="ph thumb"${d.img ? zoomAttr(d.img) : ''}>${d.img ? `<img src="${d.img}" alt="${esc(d.title)} preview" loading="lazy">` : 'Deck preview'}</div><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p><div class="tags">${d.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div><div class="foot-row">${d.href ? `<a href="${d.href}" ${ext(d.href)}>Open ↗</a>` : '<span>Deck coming soon</span>'}</div></article>`).join('');
 
   /* ---------- OPEN-SOURCE ---------- */

@@ -47,6 +47,8 @@ window.IMAGES = [
   { src: null, caption: "EIKCAI stall and products", story: "" },
   { src: "img/engage-listing.webp", thumb: "img/engage-listing.webp", pos: "0% 50%", caption: "ENGAGE on the Google Workspace Marketplace", story: "Live polls, questions, reactions and quick games in the Google Meet side panel. Listing updated 29 October 2026." },
   { src: "img/reservoir-pattern-search.webp", thumb: "img/reservoir-pattern-search-thumb.webp", pos: "50% 30%", caption: "Reservoir optimisation: pattern search, step by step", story: "A 48-variable reservoir release and storage model, solved with pattern search in MATLAB. Four storage levels were tested; the lowest cost, 0.6132, came at 48.04 MCM." },
+  { src: "img/perfora-hero.webp", thumb: "img/perfora-hero.webp", also: ["img/perfora-hero-thumb.webp"], pos: "50% 0%", caption: "Perfora landing page redesign: the hero", story: "A concept redesign pitch for Perfora, built and deployed on Vercel. The hero leads with the proof (4.8/5 from 12,400+ reviews, 2 shades whiter in 14 days) and one clear action. Not the live store." },
+  { src: "img/perfora-shop.webp", thumb: "img/perfora-shop.webp", pos: "50% 0%", caption: "Perfora redesign: concern router and best sellers", story: "Visitors pick their concern (yellow teeth, plaque, bad breath, sensitivity) and are sent to the matching routine, followed by four best sellers with the online-payment price shown." },
   { src: null, caption: "ENGAGE in a live meeting", story: "" },
   { src: null, caption: "Consulting Club", story: "" }
 ];
@@ -152,7 +154,7 @@ window.DECKS = [
   { title: "ENGAGE: meeting engagement app", tags: ["Product", "AI in Business"], img: "img/engage-listing.webp", text: "Live polls, questions, reactions and quick games in the Google Meet side panel. A no-sign-up companion that also works beside Zoom, Teams and Zoho.", href: "https://workspace.google.com/marketplace/app/engage/124557177750" },
   { title: "Climate risk across 244 markets", tags: ["Market sizing", "Scenario analysis"], text: "Decision-ready ranking for mitigation investment, from the ANU internship.", href: null },
   { title: "Reservoir release & storage optimisation", tags: ["Cost-benefit", "Optimisation", "MATLAB"], img: "img/reservoir-pattern-search-thumb.webp", text: "5 crops, 9,848 hectares, 10 periods; 44 MCM sustainable-supply threshold. Pattern search on a 48-variable model; of four storage levels tested, the lowest cost was 0.6132 at 48.04 MCM.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
-  { title: "Perfora landing page redesign", tags: ["Vibe-coding", "Vercel"], text: "Redesigned and shipped a landing page from idea to deployment.", href: null },
+  { title: "Perfora landing page redesign", tags: ["Vibe-coding", "Vercel", "Conversion"], img: "img/perfora-hero-thumb.webp", text: "A concept redesign pitch for the oral-care brand Perfora, shipped on Vercel: proof-first hero, ingredient science, a pick-your-concern router, best sellers, a before/after slider and a money-back guarantee. A concept, not their live store.", href: "https://perfora-redesign-pitch.vercel.app/" },
   { title: "Make.com CRM", tags: ["Automation", "No-code"], text: "Lightweight CRM built on Make.com, idea to deployment.", href: null }
 ];
 
