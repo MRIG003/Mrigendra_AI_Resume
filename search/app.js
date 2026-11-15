@@ -127,6 +127,7 @@
     '- Targets: Consulting, and Founder\'s Office / Chief of Staff roles. He has no full-time corporate role yet.',
     '- Reservoir project: generalised pattern search in MATLAB minimising a 48-variable release-and-storage objective with only bound constraints (5 crops, 9,848 ha, 10 periods). Lowest cost found for each storage level tested (MCM -> minimum cost): 70.04 -> 5.1529; 65.04 -> 2.7528; 48.04 -> 0.6132; 40.04 -> 10.0191. The résumé also cites a 44 MCM sustainable-supply threshold.',
     `- Perfora redesign: a concept landing-page redesign pitch for the oral-care brand Perfora, deployed on Vercel (${'https://perfora-redesign-pitch.vercel.app/'}). It is not Perfora's live store and checkout is a demo. Sections: proof-first hero, ingredient science, pick-your-concern router, best sellers, before/after slider, 30-day guarantee, FAQ.`,
+    '- Make.com CRM: a Make scenario for a personal CRM, scheduled daily at 8:00 AM. It searches a Google Sheet for follow-ups, routes rows into three filtered paths (Due today, Overdue, Severely overdue), sends a Gmail reminder on each path and updates the sheet row. Shared publicly on Make.com.',
     `- Open-source work: ${REPOS.map(r => r.name).join(', ')}.`,
     `- Writing: ${WRITING.map(w => w.title).join('; ')}.`
   ].join('\n');
