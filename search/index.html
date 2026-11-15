@@ -56,7 +56,7 @@
   <!-- HOME (Google-style start page) -->
   <section class="tab home" id="tab-home" aria-label="Home" hidden>
     <div class="home-top">
-      <a href="assets/Mrigendra_Singh_Chauhan_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a href="assets/Mrigendra_Singh_Chauhan_Resume.pdf" target="_blank" rel="noopener" data-resume>Résumé</a>
       <a href="#images">Images</a>
       <div class="apps-wrap">
         <button class="icon-btn apps-btn" id="appsBtn" aria-label="All sections" aria-expanded="false" aria-controls="appsMenu">
@@ -95,7 +95,7 @@
     <footer class="home-foot">
       <div class="hf-top">India · Gurugram · Bhopal at heart</div>
       <div class="hf-bar">
-        <div><a href="#all">About</a><a href="assets/Mrigendra_Singh_Chauhan_Resume.pdf" target="_blank" rel="noopener">Résumé</a><a href="#connect">Connect</a></div>
+        <div><a href="#all">About</a><a href="assets/Mrigendra_Singh_Chauhan_Resume.pdf" target="_blank" rel="noopener" data-resume>Résumé</a><a href="#connect">Connect</a></div>
         <div class="hf-legal">Independent parody site · not affiliated with Google LLC<a href="#" data-legal>Privacy &amp; legal</a><a href="#" id="homePlain">Plain version</a></div>
       </div>
     </footer>
@@ -116,12 +116,13 @@
       </div>
       <form class="ai-input" id="aiForm">
         <input id="aiInput" placeholder="Ask Mrigendra's AI" aria-label="Ask Mrigendra's AI">
+        <button type="button" class="pill" id="aiStop" hidden>Stop</button>
         <button type="button" class="pill" id="aiNew">New chat</button>
         <button class="send" type="submit" aria-label="Send">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5v6.6L15 12 3 13.9z"/></svg>
         </button>
       </form>
-      <p class="ai-foot">Sample · scripted answers from résumé notes. The live version uses an AI model limited to the same sources.</p>
+      <p class="ai-foot" id="aiNote">Sample · scripted answers from résumé notes. The live version uses an AI model limited to the same sources.</p>
     </div>
   </section>
 
@@ -197,8 +198,10 @@
           <button class="pill solid" id="jdBtn">Run forecast</button>
           <button class="pill" data-ex="strong">Strong-fit JD</button>
           <button class="pill" data-ex="weak">Weak-fit JD</button>
+          <button class="pill" id="jdStop" hidden>Stop</button>
         </div>
-        <p class="fineprint">Sample uses keyword matching. The final build reads the JD with an AI model, using only my résumé as evidence.</p>
+        <p class="jd-status" id="jdStatus" role="status" aria-live="polite" hidden></p>
+        <p class="fineprint" id="jdNote">Sample uses keyword matching. The final build reads the JD with an AI model, using only my résumé as evidence.</p>
       </aside>
     </div>
   </section>
@@ -285,7 +288,7 @@
             <label>Project type<select id="bType"></select></label>
           </div>
           <label>What do you need?<textarea id="bText" required placeholder="Goal, timeline, and what a great outcome looks like."></textarea></label>
-          <button class="pill solid" type="submit">Open in email →</button>
+          <div class="brief-actions"><button class="pill solid" type="submit" id="briefCopy">Copy brief</button><a class="pill" id="briefMail" href="mailto:mrigendra.chauhan2028@mastersunion.org">Open in email ↗</a></div>
         </form>
       </div>
     </div>
@@ -294,6 +297,8 @@
   <!-- PLAIN -->
   <section id="plain" hidden aria-label="Plain résumé"></section>
 </main>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <button class="legal-badge" data-legal aria-haspopup="dialog">ⓘ Parody site · not affiliated with Google</button>
 
@@ -320,6 +325,7 @@
 <script src="vendor/topojson-client.min.js"></script>
 <script src="vendor/world-110m.js"></script>
 <script src="data.js"></script>
+<script src="resume-text.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
