@@ -521,3 +521,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @keyframes spin2{to{transform:rotate(360deg)}}
 .card .thumb{padding:0;overflow:hidden;background:#fff}
 .card .thumb img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}
+.card .thumb{position:relative}
+.card .thumb[data-img]{cursor:zoom-in}
+.card .thumb[data-img]::after{content:"⤢ Enlarge";position:absolute;right:8px;bottom:8px;background:rgba(20,26,24,.78);color:#fff;font-size:11.5px;padding:3px 9px;border-radius:999px;opacity:0;transition:opacity .15s}
+.card .thumb[data-img]:hover::after,.card .thumb[data-img]:focus-visible::after{opacity:1}
+.card .thumb.tall img{object-position:50% 10%}
+.lb-inner{max-width:min(1100px,100%)}
+@media (hover:none){.card .thumb[data-img]::after{opacity:1}}

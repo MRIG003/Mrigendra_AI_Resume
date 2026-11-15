@@ -125,6 +125,7 @@
     `- Contact: phone ${PROFILE.links.phone}; email ${PROFILE.links.email}; LinkedIn ${PROFILE.links.linkedin}; GitHub ${PROFILE.links.github}; Medium ${PROFILE.links.medium}.`,
     `- Open to side projects: ${OFFERS.map(o => o.title).join('; ')}.`,
     '- Targets: Consulting, and Founder\'s Office / Chief of Staff roles. He has no full-time corporate role yet.',
+    '- Reservoir project: generalised pattern search in MATLAB minimising a 48-variable release-and-storage objective with only bound constraints (5 crops, 9,848 ha, 10 periods). Lowest cost found for each storage level tested (MCM -> minimum cost): 70.04 -> 5.1529; 65.04 -> 2.7528; 48.04 -> 0.6132; 40.04 -> 10.0191. The résumé also cites a 44 MCM sustainable-supply threshold.',
     `- Open-source work: ${REPOS.map(r => r.name).join(', ')}.`,
     `- Writing: ${WRITING.map(w => w.title).join('; ')}.`
   ].join('\n');
@@ -402,6 +403,7 @@ Rules:
   }
   function closeImage() { lightbox.hidden = true; lastFocus && lastFocus.focus(); }
   document.addEventListener('click', e => { const t = e.target.closest('[data-img]'); if (t) openImage(+t.dataset.img); });
+  document.addEventListener('keydown', e => { const t = e.target.closest && e.target.closest('.thumb[data-img]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openImage(+t.dataset.img); } });
   $('#imgGrid').addEventListener('keydown', e => { const t = e.target.closest('[data-img]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openImage(+t.dataset.img); } });
   $('#lbClose').addEventListener('click', closeImage);
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeImage(); });
@@ -410,7 +412,8 @@ Rules:
   /* ---------- SKILLS & TOOLS ---------- */
   $('#skillGroups').innerHTML = SKILLS.map(g => `<div class="sg"><h3><span>${g.icon}</span>${esc(g.group)}</h3><ul>${g.items.map(([n, ev]) => `<li><span>${esc(n)}</span>${ev ? `<small>${esc(ev)}</small>` : ''}</li>`).join('')}</ul></div>`).join('');
   $('#certs').innerHTML = CERTS.map(([n, i, d]) => `<div class="cert"><b>${esc(n)}</b><span>${esc(i)}</span><small>${esc(d)}</small></div>`).join('');
-  $('#decks').innerHTML = DECKS.map(d => `<article class="card"><div class="ph thumb">${d.img ? `<img src="${d.img}" alt="${esc(d.title)} preview" loading="lazy">` : 'Deck preview'}</div><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p><div class="tags">${d.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div><div class="foot-row">${d.href ? `<a href="${d.href}" ${ext(d.href)}>Open ↗</a>` : '<span>Deck coming soon</span>'}</div></article>`).join('');
+  const zoomAttr = src => { const i = IMAGES.findIndex(m => m.src === src || m.thumb === src); return i >= 0 ? ` data-img="${i}" tabindex="0" role="button" aria-label="Enlarge preview"` : ''; };
+  $('#decks').innerHTML = DECKS.map(d => `<article class="card"><div class="ph thumb"${d.img ? zoomAttr(d.img) : ''}>${d.img ? `<img src="${d.img}" alt="${esc(d.title)} preview" loading="lazy">` : 'Deck preview'}</div><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p><div class="tags">${d.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div><div class="foot-row">${d.href ? `<a href="${d.href}" ${ext(d.href)}>Open ↗</a>` : '<span>Deck coming soon</span>'}</div></article>`).join('');
 
   /* ---------- OPEN-SOURCE ---------- */
   const LANG_COLORS = { JavaScript: '#f1e05a', Python: '#3572A5', Jupyter: '#DA5B0B', TeX: '#3D6117', Kaggle: '#20BEFF', Prompting: '#8a63d2' };
@@ -425,7 +428,7 @@ Rules:
   });
   function renderRepos() {
     $('#repos').innerHTML = REPOS.filter(r => kind === 'All' || r.kind === kind).map(r => `
-      <article class="card">${r.img ? `<div class="ph thumb"><img src="${r.img}" alt="${esc(r.name)} preview" loading="lazy"></div>` : ''}<h3><a href="${r.href}" ${ext(r.href)}>${esc(r.name)}</a></h3><p>${esc(r.text)}</p>
+      <article class="card">${r.img ? `<div class="ph thumb"${zoomAttr(r.img)}><img src="${r.img}" alt="${esc(r.name)} preview" loading="lazy"></div>` : ''}<h3><a href="${r.href}" ${ext(r.href)}>${esc(r.name)}</a></h3><p>${esc(r.text)}</p>
       <div class="foot-row"><span class="lang"><i style="background:${LANG_COLORS[r.lang] || 'var(--muted)'}"></i>${esc(r.lang)}</span>${r.live ? `<a class="pill solid" href="${r.live}" ${ext(r.live)}>Live ↗</a>` : `<span>${esc(r.kind)}</span>`}</div></article>`).join('');
   }
   renderRepos();

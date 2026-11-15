@@ -46,6 +46,7 @@ window.IMAGES = [
   { src: null, caption: "Acadian forest fieldwork", story: "" },
   { src: null, caption: "EIKCAI stall and products", story: "" },
   { src: "img/engage-listing.webp", thumb: "img/engage-listing.webp", pos: "0% 50%", caption: "ENGAGE on the Google Workspace Marketplace", story: "Live polls, questions, reactions and quick games in the Google Meet side panel. Listing updated 29 October 2026." },
+  { src: "img/reservoir-pattern-search.webp", thumb: "img/reservoir-pattern-search-thumb.webp", pos: "50% 30%", caption: "Reservoir optimisation: pattern search, step by step", story: "A 48-variable reservoir release and storage model, solved with pattern search in MATLAB. Four storage levels were tested; the lowest cost, 0.6132, came at 48.04 MCM." },
   { src: null, caption: "ENGAGE in a live meeting", story: "" },
   { src: null, caption: "Consulting Club", story: "" }
 ];
@@ -150,7 +151,7 @@ window.DECKS = [
   { title: "EIKCAI: launch & go-to-market", tags: ["GTM", "Pricing", "Execution"], text: "Concept to market in 23 days; ₹1.3L in 40 days; top 15 of 40 teams.", href: null },
   { title: "ENGAGE: meeting engagement app", tags: ["Product", "AI in Business"], img: "img/engage-listing.webp", text: "Live polls, questions, reactions and quick games in the Google Meet side panel. A no-sign-up companion that also works beside Zoom, Teams and Zoho.", href: "https://workspace.google.com/marketplace/app/engage/124557177750" },
   { title: "Climate risk across 244 markets", tags: ["Market sizing", "Scenario analysis"], text: "Decision-ready ranking for mitigation investment, from the ANU internship.", href: null },
-  { title: "Reservoir release & storage optimisation", tags: ["Cost-benefit", "Optimisation"], text: "5 crops, 9,848 hectares, 10 periods; 44 MCM sustainable-supply threshold.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
+  { title: "Reservoir release & storage optimisation", tags: ["Cost-benefit", "Optimisation", "MATLAB"], img: "img/reservoir-pattern-search-thumb.webp", text: "5 crops, 9,848 hectares, 10 periods; 44 MCM sustainable-supply threshold. Pattern search on a 48-variable model; of four storage levels tested, the lowest cost was 0.6132 at 48.04 MCM.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
   { title: "Perfora landing page redesign", tags: ["Vibe-coding", "Vercel"], text: "Redesigned and shipped a landing page from idea to deployment.", href: null },
   { title: "Make.com CRM", tags: ["Automation", "No-code"], text: "Lightweight CRM built on Make.com, idea to deployment.", href: null }
 ];
@@ -163,7 +164,7 @@ window.REPOS = [
   { name: "Mrigendra_AI_Resume", lang: "JavaScript", kind: "Product", text: "This site: an interactive AI résumé in a search-engine theme.", href: "https://github.com/MRIG003/Mrigendra_AI_Resume" },
   { name: "Chess-Pieces-Position-Prediction_using_FEN", lang: "Jupyter", kind: "ML", text: "Keras CNN with PCA reading chess positions from images: 99.8% accuracy (9 errors in 4,000).", href: "https://github.com/MRIG003/Chess-Pieces-Position-Prediction_using_FEN" },
   { name: "Text_Classification_with_Tensorflow_using_BERT", lang: "Jupyter", kind: "ML", text: "Fine-tuned BERT on 10K+ Quora questions to flag insincere ones: 96% validation accuracy.", href: "https://github.com/MRIG003/Text_Classification_with_Tensorflow_using_BERT" },
-  { name: "Optimization-of-Reservoir-Release-and-Storage-Scheduling", lang: "Python", kind: "Research", text: "Multi-crop irrigation allocation for a non-perennial river reservoir in the Rabi season.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
+  { name: "Optimization-of-Reservoir-Release-and-Storage-Scheduling", lang: "Python", kind: "Research", img: "img/reservoir-pattern-search-thumb.webp", text: "Multi-crop irrigation allocation for a non-perennial river reservoir in the Rabi season.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
   { name: "Image-Annotation-without-using-Object-Detection-Model", lang: "Python", kind: "ML", text: "OpenCV algorithm that removes specific annotations from images without re-annotating.", href: "https://github.com/MRIG003/Image-Annotation-without-using-Object-Detection-Model" },
   { name: "Pets_Classification_using_cifar10", lang: "Jupyter", kind: "ML", text: "TensorFlow image classifier on CIFAR-10.", href: "https://github.com/MRIG003/Pets_Classification_using_cifar10" },
   { name: "Kaggle notebooks", lang: "Kaggle", kind: "ML", text: "Notebooks and badges on Kaggle.", href: "https://www.kaggle.com/mrigendrachauhan/code" }
