@@ -32,7 +32,8 @@
     `<h2>Skills</h2><ul>${SKILLS.map(g => `<li><b>${esc(g.group)}:</b> ${g.items.map(i => esc(i[0])).join(', ')}</li>`).join('')}</ul>` +
     `<h2>Publications</h2><ul>${PAPERS.map(p => `<li>${esc(p.title)}. ${esc(p.venue)}, ${esc(p.year)}.</li>`).join('')}</ul>` +
     `<h2>Recognition</h2><ul>${AWARDS.map(([w, t]) => `<li>${esc(w)}: ${esc(t)}</li>`).join('')}</ul>` +
-    `<h2>Contact</h2><p><a href="mailto:${PROFILE.links.email}">${PROFILE.links.email}</a> · <a href="${PROFILE.links.linkedin}">LinkedIn</a> · <a href="${PROFILE.links.github}">GitHub</a></p>`;
+    `<h2>Certifications</h2><ul>${CERTS.map(([n, i, d]) => `<li>${esc(n)}, ${esc(i)} (${esc(d)})</li>`).join('')}</ul>` +
+    `<h2>Contact</h2><p><a href="mailto:${PROFILE.links.email}">${PROFILE.links.email}</a> · <a href="${PROFILE.links.phoneHref}">${PROFILE.links.phone}</a> · <a href="${PROFILE.links.linkedin}">LinkedIn</a> · <a href="${PROFILE.links.github}">GitHub</a> · <a href="${PROFILE.links.resume}">Résumé (PDF)</a></p>`;
   $('#plainBtn').addEventListener('click', e => {
     const on = document.body.classList.toggle('plain');
     plain.hidden = !on;
@@ -123,6 +124,8 @@
     ...PAPERS.map(p => ({ tab: 'publications', title: p.title, text: `${p.venue}, ${p.year}. ${p.authors}`, href: p.href })),
     ...WRITING.map(w => ({ tab: 'publications', title: w.title, text: `Medium, ${w.when}`, href: w.href })),
     ...AWARDS.map(([w, t]) => ({ tab: 'all', title: t, text: `Recognition · ${w}` })),
+    ...CERTS.map(([n, i, d]) => ({ tab: 'skills', title: n, text: `Certification · ${i} · ${d}` })),
+    { tab: 'connect', title: 'Contact: phone, email and LinkedIn', text: `${PROFILE.links.phone} ${PROFILE.links.email} call whatsapp reach hire` },
     ...OFFERS.map(o => ({ tab: 'connect', title: o.title, text: `Side project. ${o.text}` })),
     ...Object.values(FORECASTS).map(f => ({ tab: 'fit', title: `${f.tabLabel} forecast: ${f.role}`, text: `${f.headline} ${f.why.join('. ')}` })),
     ...IMAGES.map(img => ({ tab: 'images', title: img.caption, text: img.story || 'Photo' }))
@@ -232,40 +235,56 @@
 
   const homeQ = $('#homeQ');
   const Home = {
-    typed: false, timer: null,
+    typed: false, typing: false, timer: null,
     enter() {
       if (this.typed) return;
       this.typed = true;
       const text = PROFILE.query;
       if (reduceMotion) { homeQ.value = text; this.ready(); return; }
       let i = 0;
+      this.typing = true;
       homeQ.value = '';
+      homeQ.focus({ preventScroll: true });
       const tick = () => {
         homeQ.value = text.slice(0, ++i);
-        if (i < text.length) this.timer = setTimeout(tick, 70); else this.ready();
+        if (i < text.length) this.timer = setTimeout(tick, 70); else { this.typing = false; this.ready(); }
       };
       this.timer = setTimeout(tick, 500);
     },
     ready() { $('#enterHint').classList.add('pulse'); homeQ.focus({ preventScroll: true }); homeQ.setSelectionRange(homeQ.value.length, homeQ.value.length); },
-    stopTyping() { clearTimeout(this.timer); this.ready(); }
+    // Enter mid-animation completes the name; any other key means the visitor is typing their own query
+    interrupt(e) {
+      if (!this.typing) return;
+      clearTimeout(this.timer); this.typing = false;
+      if (e.key === 'Enter') homeQ.value = PROFILE.query; else if (e.key && e.key.length === 1) homeQ.value = '';
+      this.ready();
+    }
   };
-  homeQ.addEventListener('keydown', () => Home.stopTyping(), { once: true });
-  homeQ.addEventListener('mousedown', () => Home.stopTyping(), { once: true });
+  homeQ.addEventListener('keydown', e => Home.interrupt(e));
+  homeQ.addEventListener('mousedown', () => { if (Home.typing) { clearTimeout(Home.timer); Home.typing = false; } });
   $('#homeForm').addEventListener('submit', e => {
     e.preventDefault();
     const v = homeQ.value.trim() || PROFILE.query;
     q.value = v;
     runSearch(v);
   });
+  $('#surpriseBtn').addEventListener('click', () => askInAiMode(KB[Math.floor(Math.random() * KB.length)].q));
+  $('#doodle').addEventListener('click', e => { e.preventDefault(); q.value = PROFILE.query; $('#landing').hidden = false; $('#searchView').hidden = true; go('all'); });
+  $$('[data-legal]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); const d = $('#legal'); if (d.showModal) d.showModal(); else d.setAttribute('open', ''); }));
   $('#homeAi').addEventListener('click', () => { const v = homeQ.value.trim(); askInAiMode(isName(v) ? KB[0].q : v); });
 
   /* ---------- ALL: landing ---------- */
-  const imgHtml = (img, cls = '') => img.src ? `<img src="${esc(img.src)}" alt="${esc(img.caption)}" loading="lazy">` : `<div class="ph ${cls}">${esc(img.caption)}</div>`;
+  const imgHtml = (img, big = false) => img.src
+    ? `<img src="${esc(big ? img.src : (img.thumb || img.src))}" alt="${esc(img.caption)}" loading="lazy" style="object-position:${img.pos || '50% 50%'}">`
+    : `<div class="ph">${esc(img.caption)}</div>`;
+  const photoBox = (el, h) => { el.classList.remove('ph'); el.innerHTML = `<img src="${h.src}" alt="${esc(h.caption)}" style="object-position:${h.pos}">`; };
+  photoBox($('#kpPhoto'), HEADSHOT);
+  photoBox($('#ccPhoto'), HEADSHOT);
   $('#strip').innerHTML = IMAGES.slice(0, 6).map((img, i) => `<button data-img="${i}" aria-label="${esc(img.caption)}">${imgHtml(img)}</button>`).join('');
   $('#ovBullets').innerHTML = PROFILE.bullets.map(([b, t]) => `<li><span><b>${esc(b)}</b> ${esc(t)}</span></li>`).join('');
   $('#ovChips').innerHTML = KB.slice(0, 3).map(k => `<button class="chip">${esc(k.q)}</button>`).join('');
   $$('#ovChips .chip').forEach(c => c.addEventListener('click', () => askInAiMode(c.textContent)));
-  $('#stops').innerHTML = STOPS.map((s, i) => `<a class="stop" href="#maps" data-stop="${i}"><div class="ph">${esc(s.photo)}</div><div class="b"><small>${esc(s.when)}</small><h3>${esc(s.name)} · ${esc(s.title)}</h3><span class="num">${esc(s.result[0])}</span><span class="lab">${esc(s.result[1])}</span></div></a>`).join('');
+  $('#stops').innerHTML = STOPS.map((s, i) => `<a class="stop" href="#maps" data-stop="${i}"><div class="ph">${s.img ? `<img src="${s.img.src}" alt="${esc(s.name)}" style="object-position:${s.img.pos}">` : esc(s.photo)}</div><div class="b"><small>${esc(s.when)}</small><h3>${esc(s.name)} · ${esc(s.title)}</h3><span class="num">${esc(s.result[0])}</span><span class="lab">${esc(s.result[1])}</span></div></a>`).join('');
   $$('#stops .stop').forEach(a => a.addEventListener('click', () => { Earth.pending = +a.dataset.stop; }));
   $('#awards').innerHTML = AWARDS.map(([w, t]) => `<div class="aw"><small>${esc(w)}</small>${esc(t)}</div>`).join('');
   $('#paa').innerHTML = KB.slice(3).map(k => `<details><summary>${esc(k.q)}</summary><div class="ans">${esc(k.a)}${sourcesHtml(k.s)}</div></details>`).join('');
@@ -292,7 +311,7 @@
   function openImage(i) {
     const img = IMAGES[i];
     lastFocus = document.activeElement;
-    $('#lbBody').innerHTML = `${imgHtml(img)}<div class="lb-text"><h3>${esc(img.caption)}</h3><p>${esc(img.story || 'Story coming soon.')}</p></div>`;
+    $('#lbBody').innerHTML = `${imgHtml(img, true)}<div class="lb-text"><h3>${esc(img.caption)}</h3><p>${esc(img.story || 'Story coming soon.')}</p></div>`;
     lightbox.hidden = false;
     $('#lbClose').focus();
   }
@@ -305,6 +324,7 @@
 
   /* ---------- SKILLS & TOOLS ---------- */
   $('#skillGroups').innerHTML = SKILLS.map(g => `<div class="sg"><h3><span>${g.icon}</span>${esc(g.group)}</h3><ul>${g.items.map(([n, ev]) => `<li><span>${esc(n)}</span>${ev ? `<small>${esc(ev)}</small>` : ''}</li>`).join('')}</ul></div>`).join('');
+  $('#certs').innerHTML = CERTS.map(([n, i, d]) => `<div class="cert"><b>${esc(n)}</b><span>${esc(i)}</span><small>${esc(d)}</small></div>`).join('');
   $('#decks').innerHTML = DECKS.map(d => `<article class="card"><div class="ph thumb">Deck preview</div><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p><div class="tags">${d.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div><div class="foot-row">${d.href ? `<a href="${d.href}" ${ext(d.href)}>Open ↗</a>` : '<span>Deck coming soon</span>'}</div></article>`).join('');
 
   /* ---------- OPEN-SOURCE ---------- */
@@ -321,7 +341,7 @@
   function renderRepos() {
     $('#repos').innerHTML = REPOS.filter(r => kind === 'All' || r.kind === kind).map(r => `
       <article class="card"><h3><a href="${r.href}" ${ext(r.href)}>${esc(r.name)}</a></h3><p>${esc(r.text)}</p>
-      <div class="foot-row"><span class="lang"><i style="background:${LANG_COLORS[r.lang] || 'var(--muted)'}"></i>${esc(r.lang)}</span><span>${esc(r.kind)}</span></div></article>`).join('');
+      <div class="foot-row"><span class="lang"><i style="background:${LANG_COLORS[r.lang] || 'var(--muted)'}"></i>${esc(r.lang)}</span>${r.live ? `<a class="pill solid" href="${r.live}" ${ext(r.live)}>Live ↗</a>` : `<span>${esc(r.kind)}</span>`}</div></article>`).join('');
   }
   renderRepos();
 
@@ -344,7 +364,7 @@
 
   /* ---------- CONNECT ---------- */
   const L = PROFILE.links;
-  $('#ccLinks').innerHTML = [['Email', `mailto:${L.email}`, 'mastersunion.org'], ['LinkedIn', L.linkedin, 'in/mrigendra-singh ↗'], ['GitHub', L.github, 'MRIG003 ↗'], ['Medium', L.medium, '@mrigendraschauhan ↗'], ['Kaggle', L.kaggle, 'mrigendrachauhan ↗']]
+  $('#ccLinks').innerHTML = [['Phone', L.phoneHref, L.phone], ['Email', `mailto:${L.email}`, 'mastersunion.org'], ['Résumé (PDF)', L.resume, 'download ↓'], ['LinkedIn', L.linkedin, 'in/mrigendra-singh ↗'], ['GitHub', L.github, 'MRIG003 ↗'], ['Medium', L.medium, '@mrigendraschauhan ↗'], ['Kaggle', L.kaggle, 'mrigendrachauhan ↗']]
     .map(([n, h, s]) => `<a href="${h}" ${ext(h)}>${n}<span>${s}</span></a>`).join('');
   $('#offers').innerHTML = OFFERS.map((o, i) => `<button class="offer" data-offer="${i}" aria-pressed="false"><i>${o.icon}</i><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></button>`).join('');
   $('#bType').innerHTML = OFFERS.map(o => `<option>${esc(o.title)}</option>`).join('') + '<option>Something else</option>';
@@ -512,7 +532,7 @@
     go(i) {
       this.idx = i;
       const s = STOPS[i];
-      $('#vCard').innerHTML = `<div class="ph">Photo: ${esc(s.photo)}</div><div class="v-body"><span class="when">${esc(s.when)} · ${esc(s.place)}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p><div class="v-result"><b>${esc(s.result[0])}</b><span>${esc(s.result[1])}</span></div></div>`;
+      $('#vCard').innerHTML = `<div class="ph">${s.img ? `<img src="${s.img.src}" alt="${esc(s.name)}" style="object-position:${s.img.pos}">` : 'Photo: ' + esc(s.photo)}</div><div class="v-body"><span class="when">${esc(s.when)} · ${esc(s.place)}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p><div class="v-result"><b>${esc(s.result[0])}</b><span>${esc(s.result[1])}</span></div></div>`;
       $$('#vList button').forEach((b, j) => b.setAttribute('aria-current', j === i));
       const from = this.projection.rotate(), to = [-s.coords[0], -s.coords[1] * 0.8];
       if (reduceMotion) { this.projection.rotate(to); this.draw(); return; }

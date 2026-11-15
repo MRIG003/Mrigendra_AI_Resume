@@ -7,6 +7,11 @@
 <meta name="description" content="Mrigendra Singh Chauhan: research in 3 countries, Springer-published, founder of EIKCAI. Targeting Consulting and Founder's Office / Chief of Staff roles. Ask the AI, or check the forecast for your role.">
 <meta property="og:title" content="Mrigendra Singh Chauhan · Making the complex simple">
 <meta property="og:description" content="Research in 3 countries · Springer-published · Founded EIKCAI (₹1.3L in 40 days) · Masters' Union PGP">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f7d6e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='38' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600;0,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -51,7 +56,7 @@
   <!-- HOME (Google-style start page) -->
   <section class="tab home" id="tab-home" aria-label="Home" hidden>
     <div class="home-top">
-      <a href="#" id="homePlain">Plain version</a>
+      <a href="assets/Mrigendra_Singh_Chauhan_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
       <a href="#images">Images</a>
       <div class="apps-wrap">
         <button class="icon-btn apps-btn" id="appsBtn" aria-label="All sections" aria-expanded="false" aria-controls="appsMenu">
@@ -59,13 +64,12 @@
         </button>
         <div class="apps-menu" id="appsMenu" hidden></div>
       </div>
-      <a class="avatar" href="#connect" aria-label="Connect with Mrigendra">M</a>
+      <a class="avatar" href="#connect" aria-label="Connect with Mrigendra"><img src="img/doodle-o.webp" alt="" width="36" height="36"></a>
     </div>
 
     <div class="home-center">
-      <a class="doodle" href="#maps" title="Today's doodle: Bhopal → Guwahati → Fredericton → Canberra → Gurugram" aria-label="MriGoogle doodle. Opens the map tour">
-        <span class="mri">Mri</span><span class="dl g1">G</span><span class="dl orb globe" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#0e3a5c"/><path d="M8 14c4-3 8-2 10 1s5 2 7-1 6-1 8 2l-2 5c-3 0-5 2-6 5s-4 3-6 1-5-2-7 0-4-1-5-4 0-6 1-9Z" fill="#3c8a62"/><ellipse cx="20" cy="20" rx="17" ry="17" fill="none" stroke="#fff3" stroke-width="1"/></svg></span><span class="dl orb sun" aria-hidden="true"><svg viewBox="0 0 40 40"><g class="rays" stroke="#FDB813" stroke-width="3" stroke-linecap="round"><path d="M20 2v5M20 33v5M2 20h5M33 20h5M7.3 7.3l3.5 3.5M29.2 29.2l3.5 3.5M7.3 32.7l3.5-3.5M29.2 10.8l3.5-3.5"/></g><circle cx="20" cy="20" r="10" fill="#FDB813"/></svg></span><span class="dl g4">g</span><span class="dl g5">l</span><span class="dl g6">e</span>
-        <span class="doodle-photo" aria-hidden="true">Your doodle<br>goes here</span>
+      <a class="doodle" href="#all" id="doodle" title="Doodle: one Mrigendra, three countries, five stops" aria-label="MriGoogle doodle. Search for Mrigendra Singh Chauhan">
+        <span class="mri">Mri</span><span class="dl g1">G</span><span class="dl orb globe" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#0e3a5c"/><path d="M8 14c4-3 8-2 10 1s5 2 7-1 6-1 8 2l-2 5c-3 0-5 2-6 5s-4 3-6 1-5-2-7 0-4-1-5-4 0-6 1-9Z" fill="#3c8a62"/><ellipse cx="20" cy="20" rx="17" ry="17" fill="none" stroke="#fff3" stroke-width="1"/></svg></span><span class="dl orb photo" aria-hidden="true"><img src="img/doodle-o.webp" alt="" width="160" height="160"></span><span class="dl g4">g</span><span class="dl g5">l</span><span class="dl g6">e</span>
       </a>
 
       <form class="home-search" id="homeForm" role="search" autocomplete="off">
@@ -73,6 +77,10 @@
         <input id="homeQ" aria-label="Search Mrigendra's work" aria-describedby="enterHint">
         <button type="button" class="ai-pill" id="homeAi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg><span>AI Mode</span></button>
       </form>
+      <div class="home-btns">
+        <button type="submit" form="homeForm" class="gbtn" id="homeSearchBtn">MriGoogle Search</button>
+        <button type="button" class="gbtn" id="surpriseBtn">Surprise me</button>
+      </div>
       <p class="enter-hint" id="enterHint">Press <kbd>Enter ↵</kbd> to search, or type anything: skills, places, projects</p>
 
       <div class="home-cards">
@@ -81,7 +89,16 @@
       </div>
 
       <nav class="shortcuts" id="shortcuts" aria-label="Sections"></nav>
+      <p class="langline">MriGoogle also speaks: <a href="#skills">Python</a> <a href="#skills">SQL</a> <a href="#skills">R</a> <a href="#skills">Excel</a></p>
     </div>
+
+    <footer class="home-foot">
+      <div class="hf-top">India · Gurugram · Bhopal at heart</div>
+      <div class="hf-bar">
+        <div><a href="#all">About</a><a href="assets/Mrigendra_Singh_Chauhan_Resume.pdf" target="_blank" rel="noopener">Résumé</a><a href="#connect">Connect</a></div>
+        <div class="hf-legal">Independent parody site · not affiliated with Google LLC<a href="#" data-legal>Privacy &amp; legal</a><a href="#" id="homePlain">Plain version</a></div>
+      </div>
+    </footer>
 
     <button class="customise" id="customiseBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.2V21h3.8L17.8 9.9l-3.8-3.8L3 17.2Zm17.7-10.4a1 1 0 0 0 0-1.4l-2.3-2.3a1 1 0 0 0-1.4 0l-1.8 1.8 3.8 3.8 1.7-1.9Z"/></svg>Customise MriGoogle</button>
   </section>
@@ -152,7 +169,7 @@
       </div>
 
       <aside class="kp" aria-label="Knowledge panel">
-        <div class="kp-photo ph">Headshot</div>
+        <div class="kp-photo ph" id="kpPhoto">Headshot</div>
         <div class="kp-body">
           <h2 id="kpName"></h2>
           <p class="kp-sub" id="kpRole"></p>
@@ -222,6 +239,8 @@
   <section class="tab" id="tab-skills" aria-label="Skills and tools" hidden>
     <div class="wide">
       <div class="skill-groups" id="skillGroups"></div>
+      <div class="sec-head"><h2>Certifications</h2></div>
+      <div class="cert-list" id="certs"></div>
       <div class="sec-head"><h2>MBA projects &amp; decks</h2></div>
       <div class="card-grid" id="decks"></div>
     </div>
@@ -251,7 +270,7 @@
   <section class="tab" id="tab-connect" aria-label="Connect" hidden>
     <div class="wide connect">
       <div class="contact-card">
-        <div class="ph cc-photo">Headshot</div>
+        <div class="ph cc-photo" id="ccPhoto">Headshot</div>
         <h2>Let's talk.</h2>
         <p>Full-time: Consulting, Founder's Office / Chief of Staff. Part-time: side projects below.</p>
         <div class="cc-links" id="ccLinks"></div>
@@ -276,13 +295,25 @@
   <section id="plain" hidden aria-label="Plain résumé"></section>
 </main>
 
+<button class="legal-badge" data-legal aria-haspopup="dialog">ⓘ Parody site · not affiliated with Google</button>
+
+<dialog class="legal" id="legal" aria-labelledby="legalTitle">
+  <h2 id="legalTitle">About this site</h2>
+  <p><b>MriGoogle</b> is an independent personal résumé website by Mrigendra Singh Chauhan, made as a parody and homage to the look and feel of a search engine.</p>
+  <p>It is <b>not affiliated with, endorsed by, sponsored by or connected to Google LLC</b>. “Google” and related names and marks are trademarks of Google LLC and are mentioned only for parody and identification. This site uses its own wordmark, icons, fonts and code, and no Google service or data.</p>
+  <p>Other names (Springer, ANU, UNB, IIT Guwahati, Masters' Union, Bloomberg and others) belong to their owners and appear only to describe the author's own education, work and achievements.</p>
+  <p><b>Privacy:</b> no analytics and no cookies. Your light/dark choice is stored in your own browser only.</p>
+  <p>Photos belong to their owners. To request a change or removal, email <a href="mailto:mrigendra.chauhan2028@mastersunion.org">mrigendra.chauhan2028@mastersunion.org</a>.</p>
+  <form method="dialog"><button class="pill solid">Close</button></form>
+</dialog>
+
 <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo">
   <div class="lb-inner"><button class="icon-btn lb-close" id="lbClose" aria-label="Close">✕</button><div id="lbBody"></div></div>
 </div>
 
 <footer class="foot">
   <span>Bhopal → Guwahati → Fredericton → Canberra → Gurugram</span>
-  <span>A personal résumé site. Inspired by, not affiliated with, Google.</span>
+  <span>Independent parody site · not affiliated with, endorsed by or sponsored by Google LLC · <a href="#" data-legal>Privacy &amp; legal</a></span>
 </footer>
 
 <script src="vendor/d3.min.js"></script>

@@ -450,3 +450,56 @@ body.ai-on .foot{display:none}
   .wx-switch button{min-width:0;flex:1}
   #plainBtn{display:none}
 }
+
+/* ---------- photos ---------- */
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.avatar{overflow:hidden;background:var(--accent)}
+.kp-photo,.cc-photo{padding:0;overflow:hidden}
+.kp-photo img,.cc-photo img,.stop .ph img,.v-card .ph img,.strip img,.img-grid img{width:100%;height:100%;object-fit:cover;display:block}
+.stop .ph,.v-card .ph{padding:0;overflow:hidden}
+.img-grid figure .ph,.img-grid figure > img{width:100%}
+.img-grid figure > img{height:auto;object-fit:contain}
+.img-grid figure:nth-child(n) > img{height:auto}
+.lb-inner img{height:auto}
+
+/* ---------- google.com-style home ---------- */
+.doodle .photo{width:.62em;height:.62em;margin:0 .03em;border-radius:50%;overflow:hidden;box-shadow:0 0 0 .045em var(--card),0 .04em .12em rgba(0,0,0,.28);transform:translateY(-.1em);background:var(--bg-2)}
+.doodle .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.doodle:hover .photo{transform:translateY(-.18em) rotate(-6deg);transition:transform .25s}
+.doodle .orb.photo{align-self:center}
+.home-btns{display:flex;gap:12px;margin-top:26px}
+.gbtn{background:var(--bg-2);border:1px solid var(--bg-2);border-radius:6px;padding:0 18px;height:38px;font-size:14px;color:var(--ink);transition:box-shadow .12s,border-color .12s}
+.gbtn:hover{box-shadow:0 1px 1px rgba(0,0,0,.18);border-color:var(--line)}
+.gbtn:focus-visible{outline:2px solid var(--accent)}
+.langline{margin-top:34px;font-size:13px;color:var(--ink-2)}
+.langline a{margin-left:8px;color:var(--link)}
+.home-center{padding-bottom:40px}
+.home-foot{background:var(--bg-2);color:var(--ink-2);font-size:14px;margin-top:auto}
+.hf-top{padding:14px 30px;border-bottom:1px solid var(--line)}
+.hf-bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding:14px 30px}
+.hf-bar a{color:var(--ink-2);margin-right:24px}
+.hf-bar a:last-child{margin-right:0}
+.hf-legal{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:center}
+.hf-legal a{margin-right:0}
+.customise{bottom:96px}
+@media (max-width:560px){.home-btns{flex-wrap:wrap;justify-content:center}.hf-top,.hf-bar{padding-left:16px;padding-right:16px}.customise{bottom:auto}}
+
+/* ---------- legal corner notice ---------- */
+.legal-badge{position:fixed;left:12px;bottom:12px;z-index:35;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:5px 12px;font-size:11.5px;box-shadow:0 1px 6px rgba(0,0,0,.1)}
+.legal-badge:hover{color:var(--ink)}
+body.home-on .legal-badge{display:none}
+dialog.legal{border:1px solid var(--line);border-radius:20px;padding:24px 26px;max-width:540px;width:calc(100% - 32px);background:var(--card);color:var(--ink);margin:auto}
+dialog.legal::backdrop{background:rgba(0,0,0,.5)}
+dialog.legal h2{font:600 22px var(--serif);margin-bottom:10px}
+dialog.legal p{font-size:14px;color:var(--ink-2);margin-bottom:10px}
+dialog.legal form{margin-top:14px}
+.foot a{color:var(--muted);text-decoration:underline}
+body.ai-on .foot{display:flex}
+@media (max-width:900px){.legal-badge{position:static;display:block;margin:0 16px 12px;width:fit-content}}
+.cert-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.cert{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:2px;background:var(--card)}
+.cert b{font-size:14.5px;font-weight:600}
+.cert span{font-size:13px;color:var(--ink-2)}
+.cert small{font-size:12px;color:var(--muted)}
+/* the hidden attribute must always win over display rules (home, dialogs, panels) */
+[hidden]{display:none!important}

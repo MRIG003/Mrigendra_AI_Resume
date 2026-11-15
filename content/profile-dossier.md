@@ -77,7 +77,11 @@ Still needed from Mrigendra: IITG campus/Cyclothon, UNB Fredericton, ANU Canberr
 EIKCAI stall/products, ENGAGE screenshots, Masters' Union events, Wingwoman.sim win,
 street play, and one high-resolution headshot.
 
-## Resume issues to fix
+## Status update (Nov 2026)
+
+Resolved: forest area (2,400 ha research forest; paper simulates 122.5 ha), ENGAGE live link (Google Workspace Marketplace), phone made public, résumé PDF added. The PDF résumé no longer lists Wingwoman.sim or PG Senator, so the site follows the PDF. See `content/open-items.md` for what is still pending.
+
+## Resume issues to fix (original list)
 
 1. **Hectares mismatch:** resume says 2,400 ha forecast; the paper studies 122.5 ha.
    Confirm which number is right before it goes on the site.
