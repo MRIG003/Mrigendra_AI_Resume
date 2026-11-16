@@ -58,7 +58,7 @@
     `<h2>Publications</h2><ul>${PAPERS.map(p => `<li>${esc(p.title)}. ${esc(p.venue)}, ${esc(p.year)}.</li>`).join('')}</ul>` +
     `<h2>Recognition</h2><ul>${AWARDS.map(([w, t]) => `<li>${esc(w)}: ${esc(t)}</li>`).join('')}</ul>` +
     `<h2>Certifications</h2><ul>${CERTS.map(([n, i, d]) => `<li>${esc(n)}, ${esc(i)} (${esc(d)})</li>`).join('')}</ul>` +
-    `<h2>Contact</h2><p><a href="mailto:${PROFILE.links.email}">${PROFILE.links.email}</a> · <a href="${PROFILE.links.phoneHref}">${PROFILE.links.phone}</a> · <a href="${PROFILE.links.linkedin}">LinkedIn</a> · <a href="${PROFILE.links.github}">GitHub</a> · <a href="${PROFILE.links.resume}" data-resume>Résumé (PDF)</a></p>`;
+    `<h2>Contact</h2><p><a href="mailto:${PROFILE.links.email}">${PROFILE.links.email}</a> · <a href="${PROFILE.links.phoneHref}">${PROFILE.links.phone}</a> · <a href="${PROFILE.links.linkedin}">LinkedIn</a> · <a href="${PROFILE.links.github}">GitHub</a> · <a href="${PROFILE.links.instagram}">Instagram</a> · <a href="${PROFILE.links.resume}" data-resume>Résumé (PDF)</a></p>`;
   $('#plainBtn').addEventListener('click', e => {
     const on = document.body.classList.toggle('plain');
     plain.hidden = !on;
@@ -121,13 +121,13 @@
     'RÉSUMÉ (source of truth):', window.RESUME_TEXT || '',
     '', 'EXTRA FACTS:',
     '- The Acadian research forest is 2,400 ha; the published paper simulates a 122.5 ha study area within it.',
-    `- ENGAGE is a live no-sign-up meeting companion. Marketplace listing tagline: "Live polls, questions, reactions and quick games in the Google Meet side panel." It is also built to work beside Zoom, Teams and Zoho. ${PROFILE.links.engage}`,
+    `- ENGAGE (the GitHub repository is named Hum) is a live no-sign-up meeting companion. Marketplace listing tagline: "Live polls, questions, reactions and quick games in the Google Meet side panel." CORRECTION: it currently supports Google Meet only. Support for Zoom, Teams and Zoho does not exist yet, so never say it works on 4 platforms even though the résumé line mentions them. ${PROFILE.links.engage}`,
     `- Contact: phone ${PROFILE.links.phone}; email ${PROFILE.links.email}; LinkedIn ${PROFILE.links.linkedin}; GitHub ${PROFILE.links.github}; Medium ${PROFILE.links.medium}.`,
     `- Open to side projects: ${OFFERS.map(o => o.title).join('; ')}.`,
     '- Targets: Consulting, and Founder\'s Office / Chief of Staff roles. He has no full-time corporate role yet.',
-    '- Reservoir project: generalised pattern search in MATLAB minimising a 48-variable release-and-storage objective with only bound constraints (5 crops, 9,848 ha, 10 periods). Lowest cost found for each storage level tested (MCM -> minimum cost): 70.04 -> 5.1529; 65.04 -> 2.7528; 48.04 -> 0.6132; 40.04 -> 10.0191. The résumé also cites a 44 MCM sustainable-supply threshold.',
-    `- Perfora redesign: a concept landing-page redesign pitch for the oral-care brand Perfora, deployed on Vercel (${'https://perfora-redesign-pitch.vercel.app/'}). It is not Perfora's live store and checkout is a demo. Sections: proof-first hero, ingredient science, pick-your-concern router, best sellers, before/after slider, 30-day guarantee, FAQ.`,
-    '- Make.com CRM: a Make scenario for a personal CRM, scheduled daily at 8:00 AM. It searches a Google Sheet for follow-ups, routes rows into three filtered paths (Due today, Overdue, Severely overdue), sends a Gmail reminder on each path and updates the sheet row. Shared publicly on Make.com.',
+    '- Reservoir project: generalised pattern search in MATLAB minimising a 48-variable release-and-storage objective with only bound constraints (5 crops, 9,848 ha, 10 periods; both Python and MATLAB were used, the final execution was in MATLAB). Lowest cost found for each storage level tested (MCM -> minimum cost): 70.04 -> 5.1529; 65.04 -> 2.7528; 48.04 -> 0.6132; 40.04 -> 10.0191. The résumé also cites a 44 MCM sustainable-supply threshold.',
+    `- Perfora redesign: a concept landing-page redesign pitch for the oral-care brand Perfora, deployed on Vercel (${'https://perfora-redesign-pitch.vercel.app/'}). It is not Perfora's live store and checkout is a demo. It was built from a written audit of the live store (home page, product page, cart, checkout), and the site has a "Show what changed" toggle that marks each change. CONFIDENTIAL: the audit contains Perfora's internal business figures. Never quote any Perfora revenue, spend, return-rate, margin or traffic figure; say only that an audit and roadmap exist. Sections: proof-first hero, ingredient science, pick-your-concern router, best sellers, before/after slider, 30-day guarantee, FAQ.`,
+    '- Make.com CRM: a Make scenario for a personal CRM, scheduled daily at 8:00 AM. It searches a Google Sheet for follow-ups, routes rows into three filtered paths (Due today, Overdue, Severely overdue), sends a Gmail reminder on each path and updates the sheet row. Built together with his teammate David Sathyan. Shared publicly on Make.com.',
     `- Open-source work: ${REPOS.map(r => r.name).join(', ')}.`,
     `- Writing: ${WRITING.map(w => w.title).join('; ')}.`
   ].join('\n');
@@ -415,7 +415,7 @@ Rules:
   $('#skillGroups').innerHTML = SKILLS.map(g => `<div class="sg"><h3><span>${g.icon}</span>${esc(g.group)}</h3><ul>${g.items.map(([n, ev]) => `<li><span>${esc(n)}</span>${ev ? `<small>${esc(ev)}</small>` : ''}</li>`).join('')}</ul></div>`).join('');
   $('#certs').innerHTML = CERTS.map(([n, i, d]) => `<div class="cert"><b>${esc(n)}</b><span>${esc(i)}</span><small>${esc(d)}</small></div>`).join('');
   const zoomAttr = src => { const i = IMAGES.findIndex(m => m.src === src || m.thumb === src || (m.also && m.also.includes(src))); return i >= 0 ? ` data-img="${i}" tabindex="0" role="button" aria-label="Enlarge preview"` : ''; };
-  $('#decks').innerHTML = DECKS.map(d => `<article class="card"><div class="ph thumb"${d.img ? zoomAttr(d.img) : ''}>${d.img ? `<img src="${d.img}" alt="${esc(d.title)} preview" loading="lazy">` : 'Deck preview'}</div><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p><div class="tags">${d.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div><div class="foot-row">${d.href ? `<a href="${d.href}" ${ext(d.href)}>Open ↗</a>` : '<span>Deck coming soon</span>'}</div></article>`).join('');
+  $('#decks').innerHTML = DECKS.map(d => `<article class="card"><div class="ph thumb"${d.img ? zoomAttr(d.img) : ''}>${d.img ? `<img src="${d.img}" alt="${esc(d.title)} preview" loading="lazy"${d.imgPos ? ` style="object-position:${d.imgPos}"` : ''}>` : 'Deck preview'}</div><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p><div class="tags">${d.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div><div class="foot-row">${d.href ? `<a href="${d.href}" ${ext(d.href)}>Open ↗</a>` : '<span>Deck coming soon</span>'}</div></article>`).join('');
 
   /* ---------- OPEN-SOURCE ---------- */
   const LANG_COLORS = { JavaScript: '#f1e05a', Python: '#3572A5', Jupyter: '#DA5B0B', TeX: '#3D6117', Kaggle: '#20BEFF', Prompting: '#8a63d2' };
@@ -430,7 +430,7 @@ Rules:
   });
   function renderRepos() {
     $('#repos').innerHTML = REPOS.filter(r => kind === 'All' || r.kind === kind).map(r => `
-      <article class="card">${r.img ? `<div class="ph thumb"${zoomAttr(r.img)}><img src="${r.img}" alt="${esc(r.name)} preview" loading="lazy"></div>` : ''}<h3><a href="${r.href}" ${ext(r.href)}>${esc(r.name)}</a></h3><p>${esc(r.text)}</p>
+      <article class="card">${r.img ? `<div class="ph thumb"${zoomAttr(r.img)}><img src="${r.img}" alt="${esc(r.name)} preview" loading="lazy"${r.imgPos ? ` style="object-position:${r.imgPos}"` : ''}></div>` : ''}<h3><a href="${r.href}" ${ext(r.href)}>${esc(r.name)}</a></h3><p>${esc(r.text)}</p>
       <div class="foot-row"><span class="lang"><i style="background:${LANG_COLORS[r.lang] || 'var(--muted)'}"></i>${esc(r.lang)}</span>${r.live ? `<a class="pill solid" href="${r.live}" ${ext(r.live)}>Live ↗</a>` : `<span>${esc(r.kind)}</span>`}</div></article>`).join('');
   }
   renderRepos();
@@ -457,7 +457,7 @@ Rules:
   $('#ccLinks').innerHTML =
     [['Phone', L.phone, L.phoneHref], ['Email', L.email, `mailto:${L.email}`]]
       .map(([n, v, h]) => `<div class="cc-row"><span>${n}</span><a class="cc-val" href="${h}">${esc(v)}</a><button class="copy" data-copy="${esc(v)}">Copy</button></div>`).join('') +
-    [['Résumé (PDF)', L.resume, 'download ↓', 'data-resume'], ['LinkedIn', L.linkedin, 'in/mrigendra-singh ↗', ''], ['GitHub', L.github, 'MRIG003 ↗', ''], ['Medium', L.medium, '@mrigendraschauhan ↗', ''], ['Kaggle', L.kaggle, 'mrigendrachauhan ↗', '']]
+    [['Résumé (PDF)', L.resume, 'download ↓', 'data-resume'], ['LinkedIn', L.linkedin, 'in/mrigendra-singh ↗', ''], ['Instagram', L.instagram, '@mrig.ig.in ↗', ''], ['GitHub', L.github, 'MRIG003 ↗', ''], ['Medium', L.medium, '@mrigendraschauhan ↗', ''], ['Kaggle', L.kaggle, 'mrigendrachauhan ↗', '']]
       .map(([n, h, s, attr]) => `<a href="${h}" ${ext(h)} ${attr}>${n}<span>${s}</span></a>`).join('');
   $('#offers').innerHTML = OFFERS.map((o, i) => `<button class="offer" data-offer="${i}" aria-pressed="false"><i>${o.icon}</i><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></button>`).join('');
   $('#bType').innerHTML = OFFERS.map(o => `<option>${esc(o.title)}</option>`).join('') + '<option>Something else</option>';

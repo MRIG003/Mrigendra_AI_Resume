@@ -528,3 +528,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .card .thumb.tall img{object-position:50% 10%}
 .lb-inner{max-width:min(1100px,100%)}
 @media (hover:none){.card .thumb[data-img]::after{opacity:1}}
+
+/* focal points (object-position) must apply: fill the box instead of being centred by the grid */
+.ph{position:relative}
+.ph > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}

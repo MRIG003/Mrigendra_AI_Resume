@@ -3,143 +3,102 @@
 Source of truth for facts: `search/assets/Mrigendra_Singh_Chauhan_Resume.pdf`.
 All site content is edited in `search/data.js`. Priority: **P1** blocks going public, **P2** makes it much better, **P3** nice to have.
 
-## Already done (for reference)
+## Resolved (Nov 16)
 
-Home page, doodle, 9 tabs, working keyword search, AI Mode and JD forecast (live in the Claude artifact, scripted elsewhere), globe tour, photos, phone, ENGAGE, Reservoir, Perfora and Make.com cards, legal notice, résumé PDF.
+- Make.com CRM built together with teammate David Sathyan; card now credits him.
+- Reservoir: Python and MATLAB both used, final execution in MATLAB; both numbers (44 MCM, 48.04 MCM) stay as they are for now.
+- ENGAGE is the name, the repository is `Hum`. Zoom, Teams and Zoho support does **not** exist, so the site now says Google Meet only.
+- Street-play photo = Manthan'18. The `Eikcai1` photo = Dropshipping Mela with Pratham Mittal. Permission granted for people shown.
+- Photos added: UNB sign, UNB snowy path, Masters' Union event (23 Oct). Instagram `@mrig.ig.in` added to Connect.
+- IITG role wording left to my judgement.
 
 ---
 
 ## A. Waiting on Mrigendra
 
-### A1. Facts to confirm (P1: wrong facts hurt in interviews)
+### A1. Facts and conflicts to settle (P1)
 
-| # | Question | Why it matters |
+| # | Item | Why it matters |
 |---|---|---|
-| 1 | **Make.com CRM:** the public scenario page lists the creator as David Sathyan. Template you adapted, shared account, or built from scratch? Is it running (preview shows "Inactive")? What does each "Update a Row" do? | The card must not claim more than is true |
-| 2 | **Reservoir:** résumé says "44 MCM sustainable-supply threshold"; the infographic says lowest cost at 48.04 MCM. How do they relate? GitHub repo is tagged Python, infographic says MATLAB: which is the code in? | An interviewer will ask |
-| 3 | **ENGAGE:** Marketplace listing says Google Meet side panel only. Does the Zoom/Teams/Zoho support exist in the installed version or only the Render app? | The card currently says "also works beside Zoom, Teams and Zoho" |
-| 4 | **Perfora:** it is a concept pitch, not their live store. Has the brand seen it? Is there a GitHub repo? What did you change and why (conversion reasoning)? | Their logo and product photos appear in the preview |
-| 5 | **Name of the app:** ENGAGE or Hum (repo is `Hum`)? | Consistency across résumé, site, GitHub |
-| 6 | **Résumé vs site wording:** confirm "Content Executive, Red Ribbon Club" and "Branch Representative" are how you want the IITG roles described | Replaced the earlier PG Senator line |
+| 1 | **Résumé PDF still says** "one-link access across 4 platforms (Meet, Zoom, Teams, Zoho)". That contradicts what you told me, and the PDF is downloadable from the site. Reword to Google Meet only? | A recruiter will compare the résumé with the site |
+| 2 | **GitHub README for `Hum`** says it runs beside Zoom, Teams and Zoho. Update it | Same mismatch, on GitHub |
+| 3 | **Wingwoman.sim:** the Masters' Union photo is the founder fireside chat and startup challenge on Fri 23 Oct (poster names the founder of wingwomen.com). Your earlier Word résumé listed "1st place, Wingwoman.sim"; the PDF dropped it. Is this that event, did you place, which person are you, and should the line return to the résumé and site? | Currently held back to follow the PDF |
+| 4 | **Perfora audit confidentiality.** The report contains Perfora's internal figures (monthly marketing spend, return rates, margins, traffic, revenue). Where did that data come from, and may it be shown publicly? Also the report's author line still reads "@Firstname Lastname" and it critiques the live store (cart bug, "FDA Approved" badge) | I used none of the figures on the site and told the AI never to quote them |
+| 5 | **Cyclothon trophy photo:** which person are you? | Caption stays neutral until then |
 
-### A2. Photos (P1 for the guesses, P2 for the new ones)
+### A2. Photos and material still missing (P2)
 
-| # | Item | Status |
-|---|---|---|
-| 1 | Confirm **street-play photo** is Manthan'18 | Used on the Bhopal stop as a guess |
-| 2 | **"An evening out"** photo (file was named `Eikcai1`): is it right, who is the other person, may it be published? | Held in Images with a neutral caption |
-| 3 | **Cyclothon trophy photo:** which person is you; are the others fine being shown? | Caption is neutral |
-| 4 | New photos: **UNB Fredericton, Acadian forest fieldwork, EIKCAI stall and products, Consulting Club, Masters' Union campus, ENGAGE in a live meeting** | Placeholders |
-| 5 | Permission for people clearly visible (ANU professor, Cyclothon riders) | Not asked yet |
-
-### A3. Cards still empty (P2)
-
-| Card | What to send |
+| Item | What to send |
 |---|---|
-| **EIKCAI: launch & go-to-market** | Store or Instagram link, 1–2 product or stall photos, a slide of the launch numbers |
-| **Climate risk across 244 markets** | A chart, map or slide from the ANU work (nothing confidential) |
-| MBA decks in general | PDFs, 4–6 slides or one hero slide each |
+| **EIKCAI** | Store or Instagram link, stall and product photos, a launch slide (the card currently uses the Dropshipping Mela photo) |
+| **Climate risk across 244 markets** | One chart, map or slide from the ANU work (nothing confidential) |
+| **Acadian forest fieldwork** | A fieldwork or data-visualisation image |
+| **Consulting Club** | An event or team photo |
+| **ENGAGE in a live meeting** | A screenshot of the host view or mood panel |
+| **Other MBA decks** | PDFs, 4–6 slides each |
+| **Kaggle notebooks** | Names and links worth showing |
+| **LinkedIn posts, intro video** | Optional |
 
-### A4. Your own words (P2: these make it sound like you)
+### A3. Your own words (P2)
 
-| Item | Where |
-|---|---|
-| One to two lines of story for **each photo** (currently empty) | Images tab, lightbox |
-| "Why Consulting" and "Why Founder's Office / CoS" | JD-Fit-Check, both forecasts |
-| 90-day plans and culture tiles | JD-Fit-Check |
-| The honest-gaps wording ("no full-time role yet") | JD-Fit-Check, AI Mode |
-| Side-project offers, scope and whether to state a price | Connect |
-| Tagline check: "Making the complex simple." | Everywhere |
+- One to two lines of story for each photo (all stories are empty, 14 photos so far).
+- Why Consulting, and why Founder's Office / CoS. 90-day plans and culture tiles in JD-Fit-Check.
+- How you word "no full-time role yet".
+- Side-project offers on Connect, and whether to state a price.
+- What you changed in the Perfora redesign and why (conversion reasoning), at a level you are happy to make public.
 
-### A5. Links and assets (P2)
+### A4. Decisions (P1)
 
-Kaggle notebook names and links, LinkedIn posts worth featuring, Instagram content (both block automated reading), optional 45–60 s intro video, EIKCAI link, GitHub repo links for Perfora and Make if they exist.
-
-### A6. Decisions (P1)
-
-1. **Go-ahead to deploy publicly.** This publishes your phone, email and photos.
-2. **Domain name** (for example `mrigendra.in`).
-3. **First target company and its job description** (builds the first real forecast).
-4. **Keep the name "MriGoogle"?** The corner notice reduces confusion but does not remove trademark risk. Alternative: a name without "Google".
-5. **Doodle idea:** keep your photo as an "o", or add illustrated or seasonal variants.
-6. **AI cost and limits:** how many questions per visitor per day you are happy to pay for.
+1. Go-ahead to publish publicly (phone, email, photos go on the open web).
+2. Domain name.
+3. First target company and its job description.
+4. Keep the name "MriGoogle"? The notice reduces confusion but does not remove trademark risk.
+5. Doodle: keep your photo as an "o", or add illustrated or seasonal versions.
+6. AI cost: how many questions per visitor per day you will pay for.
 
 ---
 
 ## B. Build work for me
 
-### B1. Make the AI real for the public site (P1)
-
-| # | Task |
-|---|---|
-| 1 | Server function (Vercel) that holds the model API key and calls Claude with the résumé as grounding. The artifact version uses each viewer's own Claude account and will **not** work on a public page |
-| 2 | Per-visitor rate limiting, a daily cost cap, abuse and prompt-injection filtering, request size limits |
-| 3 | Store the key through the secure credential form, never in the page or repo |
-| 4 | Keep the scripted answers as an offline fallback |
-| 5 | Log questions only if you want that, and update the privacy text if so (it currently promises no analytics) |
+### B1. Real AI for the public site (P1)
+Server function holding the key (entered through the secure form), per-visitor rate limits and a cost cap, prompt-injection protection, scripted answers as fallback. The artifact version uses each viewer's own Claude account and will not work on a public page.
 
 ### B2. Per-company forecast pages (P1 for your first application)
-
-| # | Task |
-|---|---|
-| 1 | Shareable per-company links (the artifact cannot use `?for=`; on the real site use `/for/<company>` or a query) |
-| 2 | Company research helper: read the company site and JD, fill the forecast and culture tiles, you review before sending |
-| 3 | A tailored one-page résumé per company (MU format skill is available) |
-| 4 | "Why this company" and "how I'd work with the founders" sections inside the forecast |
+Shareable per-company links, a helper that reads the company site and JD and drafts the forecast for you to review, a tailored one-page résumé per company, "why this company" sections.
 
 ### B3. Deployment (P1)
-
-Deploy on Vercel, connect the domain, set the absolute social-preview image URL, add `robots.txt` and a sitemap, security headers and a content-security policy, a custom 404, and a staging link to review before going public. The 3 MB single-file artifact should become normal files with lazy-loaded images for speed.
+Vercel, domain, social-preview image URL, robots and sitemap, security headers, a private staging link first. Split the 4.7 MB single file into normal files with lazy-loaded images.
 
 ### B4. Testing (P1)
+Run the live AI for real (only simulated so far), a 15–20 question recruiter set re-run after every content change (including the ENGAGE "Google Meet only" and Perfora "no figures" rules), 3+ real JDs including a weak fit, prompt-injection attempts, browser tests into the repo.
 
-| # | Task |
-|---|---|
-| 1 | **Run the live AI for real.** Only a simulated host has been tested so far |
-| 2 | Write 15–20 recruiter-style questions with expected answers and re-run them after every content change, to catch invented facts |
-| 3 | Test with 3+ real JDs, including a weak fit; check scores are honest |
-| 4 | Try to break it: "ignore your instructions", JD containing instructions, off-topic requests |
-| 5 | Add the browser smoke tests I used into the repo as one script |
+### B5. Quality (P2)
+Accessibility, a phone check of every tab in light and dark, Safari and Firefox, image performance, search and sharing tags.
 
-### B5. Quality passes (P2)
-
-| # | Task |
-|---|---|
-| 1 | Accessibility: contrast, keyboard path through every tab, screen-reader announcements for chat and forecast |
-| 2 | Visual review of every tab on a real phone, in light and dark (only widths and a few screens checked) |
-| 3 | Safari and Firefox checks; reduced-motion check |
-| 4 | Performance: image sizes, lazy loading, font loading |
-| 5 | SEO and sharing: page title and description, structured data for a person, social preview |
-
-### B6. Features to decide on (P3)
-
-"Trending" panel on All, "People also search for" links, a "Did you mean… Consultant?" nudge, voice search button, a Videos carousel for your intro, date-based doodles, per-card "Ask AI about this" buttons, a short interview-ready "30-second pitch" button.
+### B6. Extras (P3)
+Trending panel, People also search for, "Did you mean… Consultant?", voice search, videos carousel, date-based doodles, per-card "Ask AI" buttons.
 
 ---
 
-## C. Legal, privacy and reputation (P1)
+## C. Legal and privacy (P1)
 
-| # | Item |
-|---|---|
-| 1 | Decide on the name risk (A6.4). The notice is not legal advice |
-| 2 | Third-party material in previews: Perfora's logo and product images, the Google Workspace Marketplace listing, Make.com screenshot, ANU banners and the professor in the award photo. Get comfortable or get permission |
-| 3 | Phone and email are public: expect spam and cold calls. Consider a separate number or a contact form instead |
-| 4 | The privacy text says no analytics and no cookies. Keep it true or update it |
-| 5 | The repo `MRIG003/Mrigendra_AI_Resume` contains your phone and photos: decide whether it stays public |
+1. Name risk (A4.4).
+2. Third-party material in previews: Perfora logo and product images, the Marketplace listing, Make.com screenshot, ANU banners, the Masters' Union event poster showing an external founder's photo and name, Dropshipping Mela photo (permission given for the people shown).
+3. Public phone and email: expect spam. Consider a form.
+4. Privacy text promises no analytics and no cookies. Keep it true or update it. Instagram link added (no tracking on this site).
+5. Decide whether the repo `MRIG003/Mrigendra_AI_Resume` stays public.
 
-## D. Profiles to align (P2, outside this site)
-
-GitHub bio still says "An avid ML enthusiast"; Kaggle has no bio; LinkedIn headline and Featured link should point to the new site; Medium bio is fine ("Making the complex simple."); update the résumé PDF if any fact above changes and regenerate `search/resume-text.js`.
+## D. Profiles outside this site (P2)
+GitHub bio still "An avid ML enthusiast"; Kaggle has no bio; LinkedIn headline and Featured link to the new site; Instagram bio link; update the résumé PDF if facts change and regenerate `search/resume-text.js`.
 
 ## E. Repo housekeeping (P3)
-
-Remove or archive the older `sample/` prototype, keep `search/README.md` current, merge the working branch when ready, add a short GitHub README with a link to the live site.
+Archive the old `sample/` prototype, keep READMEs current, merge the working branch when ready.
 
 ---
 
 ## Suggested order
 
-1. **This week:** answer A1 and A2 confirmations, send the EIKCAI and Climate-risk material, write the photo stories (A4).
-2. **Then:** I build B1 to B4 (real AI, tests), you pick the domain and approve deployment.
-3. **Before your first application:** B2 with the real target company, C items settled.
-4. **After launch:** B5 polish, D profile updates, B6 extras.
+1. **Now:** settle A1.1 to A1.4, send EIKCAI and Climate-risk material, start the photo stories.
+2. **Then:** I build B1 to B4 while you choose the domain and approve deployment.
+3. **Before your first application:** B2 with the real company, section C settled.
+4. **After launch:** polish, profile updates, extras.

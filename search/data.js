@@ -21,6 +21,7 @@ window.PROFILE = {
   ],
   stats: [["₹1.3L", "in 40 days"], ["244", "markets ranked"], ["97.5%", "NASA match"], ["8/470+", "MUCC core"]],
   links: {
+    instagram: "https://www.instagram.com/mrig.ig.in",
     email: "mrigendra.chauhan2028@mastersunion.org",
     phone: "+91 84356 73237",
     phoneHref: "tel:+918435673237",
@@ -41,8 +42,10 @@ window.IMAGES = [
   { src: "img/cyclothon-trophy.webp", thumb: "img/cyclothon-trophy-thumb.webp", pos: "50% 35%", caption: "PRAYATNA Cyclothon, IIT Guwahati", story: "" },
   { src: "img/street-play.webp", thumb: "img/street-play-thumb.webp", pos: "40% 30%", caption: "On stage with the street play team", story: "" },
   { src: "img/headshot.webp", thumb: "img/headshot-thumb.webp", pos: "50% 18%", caption: "Portrait", story: "" },
-  { src: "img/evening-out.webp", thumb: "img/evening-out-thumb.webp", pos: "50% 30%", caption: "An evening out", story: "" },
-  { src: null, caption: "UNB, Fredericton", story: "" },
+  { src: "img/evening-out.webp", thumb: "img/evening-out-thumb.webp", pos: "50% 30%", caption: "At the Dropshipping Mela with Pratham Mittal, Founder of Masters' Union", story: "" },
+  { src: "img/unb-sign.webp", thumb: "img/unb-sign-thumb.webp", pos: "50% 55%", caption: "At UNB, Fredericton: Faculty of Computer Science", story: "" },
+  { src: "img/unb-path.webp", thumb: "img/unb-path-thumb.webp", pos: "50% 40%", caption: "A snowy walk past the UNB Computer Science building", story: "" },
+  { src: "img/mu-event.webp", thumb: "img/mu-event-thumb.webp", pos: "50% 55%", caption: "Masters' Union: founder fireside chat and startup challenge, 23 Oct", story: "" },
   { src: null, caption: "Acadian forest fieldwork", story: "" },
   { src: null, caption: "EIKCAI stall and products", story: "" },
   { src: "img/engage-listing.webp", thumb: "img/engage-listing.webp", pos: "0% 50%", caption: "ENGAGE on the Google Workspace Marketplace", story: "Live polls, questions, reactions and quick games in the Google Meet side panel. Listing updated 29 October 2026." },
@@ -89,7 +92,7 @@ window.KB = [
     a: "He was Overall Coordinator of the PRAYATNA Cyclothon at IIT Guwahati: 180+ cyclists, ₹65,000 raised from the Assam State AIDS Control Society, and Monster Energy onboarded as a partner.",
     s: ["Résumé › Leadership", "Images"] },
   { q: "What is ENGAGE?", icon: "🤖", k: ["engage", "app", "meeting", "built", "build", "product", "ai", "ml", "open source", "github"],
-    a: "A no-sign-up meeting companion, listed on the Google Workspace Marketplace for the Google Meet side panel and built to work beside Zoom, Teams and Zoho too. It runs live polls, questions, reactions and quick games, and a host mood view flags quiet attendees and suggests fixes for dips.",
+    a: "A no-sign-up meeting companion, listed on the Google Workspace Marketplace as a Google Meet side-panel add-on. It runs live polls, questions, reactions and quick games, and a host mood view flags quiet attendees and suggests fixes for dips. It currently supports Google Meet only.",
     s: ["Open-source", "Résumé › Projects"] },
   { q: "Can I hire him for a side project?", icon: "🤝", k: ["hire", "side", "freelance", "contract", "help"],
     a: "Yes. He takes on short side projects: market sizing and research sprints, AI automations and tools, climate and ESG analysis, and data prototypes. The Connect tab has a brief form.",
@@ -110,7 +113,7 @@ window.STOPS = [
     text: "M.Tech in Earth System Science & Engineering (85.6%) on an MoE scholarship. Content Executive of the Red Ribbon Club and Branch Representative on the Student Academic Board. Ran the PRAYATNA Cyclothon.",
     result: ["180+", "cyclists mobilised"] },
   { id: "fredericton", name: "Fredericton", place: "New Brunswick, Canada", when: "Jan–May 2024", layer: "research", coords: [-66.64, 45.96],
-    title: "Mitacs Globalink · UNB", photo: "UNB / Acadian forest", img: null,
+    title: "Mitacs Globalink · UNB", photo: "UNB / Acadian forest", img: { src: "img/unb-sign-thumb.webp", pos: "50% 58%" },
     text: "Reverse-engineered an undocumented Harvard ecosystem model and calibrated it to local conditions to forecast carbon in a 2,400 ha research forest (the published simulation covers a 122.5 ha study area), out to 2075. Published in Springer's Earth Systems and Environment.",
     result: ["97.5%", "match to NASA MODIS"] },
   { id: "canberra", name: "Canberra", place: "ACT, Australia", when: "Jun–Aug 2024", layer: "research", coords: [149.13, -35.28],
@@ -118,7 +121,7 @@ window.STOPS = [
     text: "One of 70 selected in India. Scenario analysis of 1.5°C vs 2.7°C pathways across 244 countries, ranked into a decision-ready view for policymakers.",
     result: ["5×", "swing in population at risk"] },
   { id: "gurugram", name: "Gurugram", place: "Haryana, India", when: "2026 → now", layer: "ventures", coords: [77.03, 28.46],
-    title: "Masters' Union", photo: "Masters' Union / EIKCAI stall", img: null,
+    title: "Masters' Union", photo: "Masters' Union / EIKCAI stall", img: { src: "img/mu-event-thumb.webp", pos: "50% 62%" },
     text: "PGP in Technology & Business Management on the MU Scholarship for Technology Leaders. Founded EIKCAI, shipped ENGAGE, joined the Consulting Club core team (8 of 470+), selected for the Outlier AI community.",
     result: ["₹1.3L", "revenue in 40 days"] }
 ];
@@ -151,23 +154,23 @@ window.CERTS = [
 
 // MBA projects and decks. Add the PPT/PDF link in href when ready.
 window.DECKS = [
-  { title: "EIKCAI: launch & go-to-market", tags: ["GTM", "Pricing", "Execution"], text: "Concept to market in 23 days; ₹1.3L in 40 days; top 15 of 40 teams.", href: null },
-  { title: "ENGAGE: meeting engagement app", tags: ["Product", "AI in Business"], img: "img/engage-listing.webp", text: "Live polls, questions, reactions and quick games in the Google Meet side panel. A no-sign-up companion that also works beside Zoom, Teams and Zoho.", href: "https://workspace.google.com/marketplace/app/engage/124557177750" },
+  { title: "EIKCAI: launch & go-to-market", tags: ["GTM", "Pricing", "Execution"], img: "img/evening-out-thumb.webp", imgPos: "50% 24%", text: "Concept to market in 23 days; ₹1.3L in 40 days; top 15 of 40 teams. Photo: the Dropshipping Mela at Masters' Union.", href: null },
+  { title: "ENGAGE: meeting engagement app", tags: ["Product", "AI in Business"], img: "img/engage-listing.webp", text: "Live polls, questions, reactions and quick games in the Google Meet side panel. A no-sign-up meeting companion, built and listed on the Google Workspace Marketplace.", href: "https://workspace.google.com/marketplace/app/engage/124557177750" },
   { title: "Climate risk across 244 markets", tags: ["Market sizing", "Scenario analysis"], text: "Decision-ready ranking for mitigation investment, from the ANU internship.", href: null },
-  { title: "Reservoir release & storage optimisation", tags: ["Cost-benefit", "Optimisation", "MATLAB"], img: "img/reservoir-pattern-search-thumb.webp", text: "5 crops, 9,848 hectares, 10 periods; 44 MCM sustainable-supply threshold. Pattern search on a 48-variable model; of four storage levels tested, the lowest cost was 0.6132 at 48.04 MCM.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
-  { title: "Perfora landing page redesign", tags: ["Vibe-coding", "Vercel", "Conversion"], img: "img/perfora-hero-thumb.webp", text: "A concept redesign pitch for the oral-care brand Perfora, shipped on Vercel: proof-first hero, ingredient science, a pick-your-concern router, best sellers, a before/after slider and a money-back guarantee. A concept, not their live store.", href: "https://perfora-redesign-pitch.vercel.app/" },
-  { title: "Make.com CRM: daily follow-up reminders", tags: ["Automation", "No-code", "Make"], img: "img/make-crm-scenario-thumb.webp", text: "A Make.com automation for a personal CRM. Every day at 8:00 AM it searches a Google Sheet for follow-ups, sorts them into Due today, Overdue and Severely overdue, sends the matching Gmail reminder, and updates the sheet row.", href: "https://eu1.make.com/public/shared-scenario/uLRC8VlXmYp/daily-follow-up-reminders-personal-crm" }
+  { title: "Reservoir release & storage optimisation", tags: ["Cost-benefit", "Optimisation", "MATLAB"], img: "img/reservoir-pattern-search-thumb.webp", imgPos: "50% 0%", text: "5 crops, 9,848 hectares, 10 periods; 44 MCM sustainable-supply threshold. Pattern search on a 48-variable model; of four storage levels tested, the lowest cost was 0.6132 at 48.04 MCM. Built in Python and MATLAB; the final run was in MATLAB.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
+  { title: "Perfora landing page redesign", tags: ["Vibe-coding", "Vercel", "Conversion"], img: "img/perfora-hero-thumb.webp", text: "A concept redesign pitch for the oral-care brand Perfora, shipped on Vercel: proof-first hero, ingredient science, a pick-your-concern router, best sellers, a before/after slider and a money-back guarantee. Built from an audit of the live store, with a \"Show what changed\" toggle that marks each change. A concept, not their live store.", href: "https://perfora-redesign-pitch.vercel.app/" },
+  { title: "Make.com CRM: daily follow-up reminders", tags: ["Automation", "No-code", "Make"], img: "img/make-crm-scenario-thumb.webp", text: "A Make.com automation for a personal CRM. Every day at 8:00 AM it searches a Google Sheet for follow-ups, sorts them into Due today, Overdue and Severely overdue, sends the matching Gmail reminder, and updates the sheet row. Built together with teammate David Sathyan.", href: "https://eu1.make.com/public/shared-scenario/uLRC8VlXmYp/daily-follow-up-reminders-personal-crm" }
 ];
 
 // Open-source tab. `live` adds a "Live" button.
 window.REPOS = [
-  { name: "Hum (ENGAGE)", lang: "JavaScript", kind: "Product", img: "img/engage-listing.webp", text: "Meeting engagement layer beside Meet, Zoom, Teams and Zoho: polls, Q&A, host mood view, no sign-up.", href: "https://github.com/MRIG003/Hum", live: "https://workspace.google.com/marketplace/app/engage/124557177750" },
+  { name: "ENGAGE (repo: Hum)", lang: "JavaScript", kind: "Product", img: "img/engage-listing.webp", text: "Meeting engagement companion for Google Meet: polls, questions, reactions, quick games and a host mood view, with no sign-up. The repository is named Hum.", href: "https://github.com/MRIG003/Hum", live: "https://workspace.google.com/marketplace/app/engage/124557177750" },
   { name: "MastersUnion_ResumeFormat", lang: "TeX", kind: "Tool", text: "One-page LaTeX résumé template for Masters' Union students, tuned for consulting roles.", href: "https://github.com/MRIG003/MastersUnion_ResumeFormat" },
   { name: "HELPMEHUMANIZE", lang: "Prompting", kind: "Tool", text: "Prose-craft rewriter that improves clarity and voice while preserving facts.", href: "https://github.com/MRIG003/HELPMEHUMANIZE" },
   { name: "Mrigendra_AI_Resume", lang: "JavaScript", kind: "Product", text: "This site: an interactive AI résumé in a search-engine theme.", href: "https://github.com/MRIG003/Mrigendra_AI_Resume" },
   { name: "Chess-Pieces-Position-Prediction_using_FEN", lang: "Jupyter", kind: "ML", text: "Keras CNN with PCA reading chess positions from images: 99.8% accuracy (9 errors in 4,000).", href: "https://github.com/MRIG003/Chess-Pieces-Position-Prediction_using_FEN" },
   { name: "Text_Classification_with_Tensorflow_using_BERT", lang: "Jupyter", kind: "ML", text: "Fine-tuned BERT on 10K+ Quora questions to flag insincere ones: 96% validation accuracy.", href: "https://github.com/MRIG003/Text_Classification_with_Tensorflow_using_BERT" },
-  { name: "Optimization-of-Reservoir-Release-and-Storage-Scheduling", lang: "Python", kind: "Research", img: "img/reservoir-pattern-search-thumb.webp", text: "Multi-crop irrigation allocation for a non-perennial river reservoir in the Rabi season.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
+  { name: "Optimization-of-Reservoir-Release-and-Storage-Scheduling", lang: "Python", kind: "Research", img: "img/reservoir-pattern-search-thumb.webp", imgPos: "50% 0%", text: "Multi-crop irrigation allocation for a non-perennial river reservoir in the Rabi season. Both Python and MATLAB were used; the final execution was in MATLAB.", href: "https://github.com/MRIG003/Optimization-of-Reservoir-Release-and-Storage-Scheduling" },
   { name: "Image-Annotation-without-using-Object-Detection-Model", lang: "Python", kind: "ML", text: "OpenCV algorithm that removes specific annotations from images without re-annotating.", href: "https://github.com/MRIG003/Image-Annotation-without-using-Object-Detection-Model" },
   { name: "Pets_Classification_using_cifar10", lang: "Jupyter", kind: "ML", text: "TensorFlow image classifier on CIFAR-10.", href: "https://github.com/MRIG003/Pets_Classification_using_cifar10" },
   { name: "Kaggle notebooks", lang: "Kaggle", kind: "ML", text: "Notebooks and badges on Kaggle.", href: "https://www.kaggle.com/mrigendrachauhan/code" }
